@@ -1,7 +1,19 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 import os
+from dotenv import load_dotenv
 
-env_path = os.path.join(os.path.dirname(__file__), "..", "test.env" if "TEST" in os.environ else "test.env")
+#env_path = os.path.join(
+#    os.path.dirname(__file__),
+#    "..",
+#    ".env.test" if "TEST" in os.environ else
+#    ".env.dev" if "DEVELOPMENT" in os.environ else
+#    ".env.prod"
+#)
+
+
+env_path = ".env.test" if "PYTEST_VERSION" in os.environ else ".env.dev"
+load_dotenv(env_path)
+
 
 class Settings(BaseSettings):
     database_hostname: str

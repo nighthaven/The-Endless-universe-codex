@@ -8,6 +8,7 @@ def install_models():
     from src.models import media_models
     from src.models import factions_models
 
+
 SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"
 
 engine = create_engine(SQLALCHEMY_DATABASE_URL)
