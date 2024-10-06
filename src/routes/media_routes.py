@@ -15,7 +15,7 @@ router = APIRouter(
 )
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=MediaResponseModel)
-def create_user(media: MediaFormCreation, db: Annotated[Session, Depends(get_db)], current_user: User = Depends(get_current_user)):
+def create_media(media: MediaFormCreation, db: Annotated[Session, Depends(get_db)], current_user: User = Depends(get_current_user)):
     new_media = Media(
         name=media.name,
         description=media.description,

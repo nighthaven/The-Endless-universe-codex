@@ -15,7 +15,7 @@ class FactionDescription(Base):
     __tablename__ = "factions_descriptions"
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     faction_id = Column(Integer, ForeignKey("factions.id"), nullable=False)
-    faction = Relationship("factions")
+    faction = Relationship("Faction")
     media_id = Column(Integer, ForeignKey("media.id"), nullable=False)
-    media = Relationship("media")
+    media = Relationship("Media")
     size = Column(Boolean, nullable=False, server_default="False")
