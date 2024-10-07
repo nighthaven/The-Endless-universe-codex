@@ -1,10 +1,10 @@
-from src.services.media_services import MediaServices
+from src.services.media_services import MediaService
 from tests.factories.media_factory import MediaFactory
 
 class TestCreateMediaService:
     def test_create_media_service(self, client, db_session):
         media = MediaFactory()
-        response = MediaServices.create(media, db_session)
+        response = MediaService.create(media, db_session)
         assert response.name == media.name
         assert response.description == media.description
 
@@ -12,7 +12,8 @@ class TestCreateMediaService:
         media1 = MediaFactory()
         media2 = MediaFactory()
         media3 = MediaFactory()
-        response = MediaServices.get_all(db_session)
+        media_service = MediaService(db_session)
+        response = media_service.get_all()
         assert len(response) == 3
         assert response[0].name == media1.name
         assert response[1].name == media2.name
