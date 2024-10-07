@@ -7,7 +7,9 @@ from sqlalchemy.orm import sessionmaker
 from alembic import command
 from alembic.config import Config
 from tests.factories.users_factory import UserFactory
+from tests.factories.media_factory import MediaFactory
 import os
+from src.utils.Oauth2 import create_access_token
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('DATABASE_USERNAME')}:{os.getenv('DATABASE_PASSWORD')}@{os.getenv('DATABASE_HOSTNAME')}:{os.getenv('DATABASE_PORT')}/{os.getenv('DATABASE_NAME')}"
 
@@ -26,6 +28,11 @@ def override_get_db():
 
 app.dependency_overrides[get_db] = override_get_db
 
+def add_factories(db_session):
+    UserFactory._meta.sqlalchemy_session = db_session
+    MediaFactory._meta.sqlalchemy_session = db_session
+
+
 @pytest.fixture
 def db_session():
     """Fixture qui crée une session de base de données pour les tests."""
@@ -41,6 +48,16 @@ def client(db_session):
     alembic_cfg.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
     command.upgrade(alembic_cfg, "head")
 
-    UserFactory._meta.sqlalchemy_session = db_session
+    add_factories(db_session)
 
     yield TestClient(app)
+
+@pytest.fixture
+def authenticated_client(client):
+    user = UserFactory()
+    access_token = create_access_token(data={"user_id": str(user.id)})
+    client.headers = {
+        "Authorization": f"Bearer {access_token}"
+    }
+
+    return client
