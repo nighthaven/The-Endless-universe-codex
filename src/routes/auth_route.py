@@ -4,7 +4,6 @@ from sqlalchemy.orm import Session
 from fastapi.security.oauth2 import OAuth2PasswordRequestForm
 from src.models.users_models import User
 from src.models import get_db
-from src.serializer.user_serializer import UserResponseModel
 from src.utils.Oauth2 import create_access_token
 from src.utils.crypto import verify_password
 
