@@ -1,7 +1,9 @@
+from datetime import datetime, timedelta
+from typing import Any
+
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
 from jose import JWSError, jwt
-from datetime import datetime, timedelta
 
 from src.config import settings
 from src.serializer.auth_serializer import TokenData
@@ -12,7 +14,8 @@ SECRET_KEY = f"{settings.secret_key}"
 ALGORYTHM = f"{settings.algorythm}"
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.access_token_expire_minutes
 
-def create_access_token(data: dict):
+
+def create_access_token(data: dict[str, Any]) -> Any:
     to_encode = data.copy()
     expire = datetime.utcnow() + timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
     to_encode.update({"exp": expire})

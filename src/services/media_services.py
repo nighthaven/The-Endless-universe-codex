@@ -1,5 +1,6 @@
-from fastapi import Depends
 from typing import Annotated
+
+from fastapi import Depends
 from sqlalchemy.orm import Session
 
 from src.models import get_db
@@ -15,7 +16,6 @@ class MediaService:
         self.db.commit()
         self.db.refresh(media)
         return media
-
 
     def get_all(self):
         media = self.db.query(Media).all()

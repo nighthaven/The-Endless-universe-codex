@@ -1,16 +1,17 @@
 import os
+
 import pytest
-from sqlalchemy import create_engine, MetaData
+from fastapi.testclient import TestClient
+from sqlalchemy import MetaData, create_engine
 from sqlalchemy.orm import sessionmaker
 
-from fastapi.testclient import TestClient
+from alembic import command
+from alembic.config import Config
 from src.main import app
 from src.models import get_db
 from src.utils.Oauth2 import create_access_token
-from alembic import command
-from alembic.config import Config
-from tests.factories.users_factory import UserFactory
 from tests.factories.media_factory import MediaFactory
+from tests.factories.users_factory import UserFactory
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('DATABASE_USERNAME')}:{os.getenv('DATABASE_PASSWORD')}@{os.getenv('DATABASE_HOSTNAME')}:{os.getenv('DATABASE_PORT')}/{os.getenv('DATABASE_NAME')}"
 
@@ -18,6 +19,7 @@ engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 TestingSessionLocal = sessionmaker(bind=engine, autocommit=False, autoflush=False)
 metadata = MetaData()
+
 
 def override_get_db():
     db = TestingSessionLocal()
@@ -28,6 +30,7 @@ def override_get_db():
 
 
 app.dependency_overrides[get_db] = override_get_db
+
 
 def add_factories(db_session):
     UserFactory._meta.sqlalchemy_session = db_session
@@ -41,10 +44,11 @@ def db_session():
     yield session
     session.close()
 
+
 @pytest.fixture
 def client(db_session):
-    metadata.reflect(bind=engine) # lie toutes donnée a la bdd
-    metadata.drop_all(bind=engine) # supprime tout
+    metadata.reflect(bind=engine)  # lie toutes donnée a la bdd
+    metadata.drop_all(bind=engine)  # supprime tout
     alembic_cfg = Config("alembic.ini")
     alembic_cfg.set_main_option("sqlalchemy.url", SQLALCHEMY_DATABASE_URL)
     command.upgrade(alembic_cfg, "head")
@@ -53,12 +57,11 @@ def client(db_session):
 
     yield TestClient(app)
 
+
 @pytest.fixture
 def authenticated_client(client):
     user = UserFactory()
     access_token = create_access_token(data={"user_id": str(user.id)})
-    client.headers = {
-        "Authorization": f"Bearer {access_token}"
-    }
+    client.headers = {"Authorization": f"Bearer {access_token}"}
 
     return client
