@@ -1,11 +1,11 @@
-from fastapi import APIRouter, status, HTTPException, Depends
-from typing import List, Annotated
-from sqlalchemy.orm import Session
+from fastapi import APIRouter, status, Depends
+from typing import Annotated, Any
 
 from src.serializer.user_serializer import UserCreationForm, UserResponseModel, UserResponseModelWithRole
-from src.models import get_db
-from src.models.users_models import User, UserRole
+from src.serializer.user_serializer import UpdateUserRoleRequest
+from src.models.users_models import User
 from src.utils.crypto import hash_password
+from src.services.user_services import UserService
 
 router = APIRouter(
     prefix="/users",
@@ -13,33 +13,23 @@ router = APIRouter(
 )
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=UserResponseModel)
-def create_user(user: UserCreationForm, db: Annotated[Session, Depends(get_db)]):
+def create_user(user_service: Annotated[Any, Depends(UserService)], user: UserCreationForm):
     new_user = User(
         username=user.username,
         email=user.email,
         password=hash_password(user.password),
     )
-    db.add(new_user)
-    db.commit()
-    db.refresh(new_user)
+    new_user = user_service.create_user(new_user)
     return new_user
 
 
-@router.get("/{user_id}", response_model=UserResponseModel)
-def get_user_by_id(user_id: str, db: Annotated[Session, Depends(get_db)]):
-    user = db.query(User).filter(User.id == user_id).first()
-    if not user:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND)
+@router.get("/{email}", response_model=UserResponseModel)
+def get_user_by_email(user_service: Annotated[Any, Depends(UserService)], email: str):
+    user = user_service.get_user(email)
     return user
 
 
-@router.put("/{user_id}/roles", response_model=UserResponseModelWithRole)
-def update_user_role(user_id: str, roles: List[UserRole], db: Annotated[Session, Depends(get_db)]):
-    user = db.query(User).filter(User.id == user_id).first()
-    if not user:
-        raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail="User not found")
-    user.roles = roles
-    db.commit()
-    db.refresh(user)
-
+@router.put("/{email}/roles", response_model=UserResponseModelWithRole)
+def update_user_role(user_service: Annotated[Any, Depends(UserService)], email: str, user_roles: UpdateUserRoleRequest):
+    user = user_service.update_role(email, user_roles.roles)
     return UserResponseModelWithRole.model_validate(user)

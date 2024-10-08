@@ -1,12 +1,9 @@
-from typing import Union
 from fastapi import FastAPI, Depends
-#from src.models import engine
 from src.models.users_models import User
 from src.routes.users_routes import router as user_router
 from src.routes.auth_route import router as login_router
 from src.routes.media_routes import router as media_router
 from src.utils.Oauth2 import get_current_user
-#from src.models import test_model
 
 
 app = FastAPI()
