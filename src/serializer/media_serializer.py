@@ -1,6 +1,5 @@
 from pydantic import BaseModel, ConfigDict
 from src.models.media_models import MediaName
-from typing import Optional
 
 class MediaFormCreation(BaseModel):
     name: MediaName

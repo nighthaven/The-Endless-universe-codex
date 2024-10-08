@@ -1,5 +1,3 @@
-import uuid
-
 from src.models.users_models import UserRole
 from tests.factories.users_factory import UserFactory
 
@@ -16,20 +14,20 @@ class TestCreateUser:
 
 
 class TestGetUserById:
-    def test_get_user_by_id(self, client):
-        user = UserFactory(id="7b73a909-d93d-4ab1-a6ec-c65132ad7ec2")
-        response = client.get(f"/users/{user.id}")
+    def test_get_user_by_email(self, client):
+        user = UserFactory()
+        response = client.get(f"/users/{user.email}")
         assert response.status_code == 200
 
     def test_get_user_not_found(self, client):
-        response = client.get(f"/users/{uuid.uuid4()}")
+        response = client.get(f"/users/{"emailthatdoesn'texist"}")
         assert response.status_code == 404
 
 
 class TestUpdateUser:
     def test_update_user_role(self, client):
         user = UserFactory()
-        response = client.put(f"/users/{user.id}/roles", json={"roles": [UserRole.ADMIN.value]})
+        response = client.put(f"/users/{user.email}/roles", json={"roles": [UserRole.ADMIN.value]})
         assert response.status_code == 200
 
 
