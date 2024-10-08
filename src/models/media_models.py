@@ -1,12 +1,12 @@
 import enum
-import uuid
 import typing
+import uuid
+
+from sqlalchemy import Column, Enum, Integer, String
 from sqlalchemy.dialects.postgresql import UUID
 
-from sqlalchemy import Column, String, Integer, TIMESTAMP, text, DateTime, Enum, ARRAY
 from src.models import Base
 
-from datetime import datetime
 
 class MediaName(enum.Enum):
     ENDLESS_SPACE = "Endless Space"
