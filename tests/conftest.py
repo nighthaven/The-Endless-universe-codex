@@ -1,15 +1,16 @@
+import os
 import pytest
-from fastapi.testclient import TestClient
-from src.main import app
-from src.models import Base, get_db
 from sqlalchemy import create_engine, MetaData
 from sqlalchemy.orm import sessionmaker
+
+from fastapi.testclient import TestClient
+from src.main import app
+from src.models import get_db
+from src.utils.Oauth2 import create_access_token
 from alembic import command
 from alembic.config import Config
 from tests.factories.users_factory import UserFactory
 from tests.factories.media_factory import MediaFactory
-import os
-from src.utils.Oauth2 import create_access_token
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('DATABASE_USERNAME')}:{os.getenv('DATABASE_PASSWORD')}@{os.getenv('DATABASE_HOSTNAME')}:{os.getenv('DATABASE_PORT')}/{os.getenv('DATABASE_NAME')}"
 

@@ -1,8 +1,7 @@
 from fastapi import APIRouter, status, Depends
 from typing import Annotated, List, Any
-from sqlalchemy.orm import Session
 
-from src.models import get_db
+from src.models.media_models import Media
 from src.models.users_models import User
 from src.serializer.media_serializer import MediaResponseModel, MediaFormCreation
 from src.utils.Oauth2 import get_current_user
@@ -15,8 +14,16 @@ router = APIRouter(
 )
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=MediaResponseModel)
-def create_media(media: MediaFormCreation, db: Annotated[Session, Depends(get_db)], current_user: User = Depends(get_current_user)):
-    new_media = MediaService.create(media, db)
+def create_media(
+        media_service: Annotated[Any, Depends(MediaService)],
+        media: MediaFormCreation,
+        current_user: User = Depends(get_current_user)
+):
+    new_media = Media(
+        name=media.name,
+        description=media.description,
+    )
+    new_media = media_service.create(new_media)
     return new_media
 
 
