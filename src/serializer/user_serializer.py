@@ -1,7 +1,9 @@
+from typing import List
+
 from pydantic import BaseModel, ConfigDict
 from pydantic.networks import EmailStr
+
 from src.models.users_models import UserRole
-from typing import List
 
 
 class UserResponseModel(BaseModel):
@@ -25,5 +27,3 @@ class UpdateUserRoleRequest(BaseModel):
 class TokenResponse(BaseModel):
     access_token: str
     token_type: str
-
-

@@ -1,6 +1,7 @@
 from src.services.media_services import MediaService
 from tests.factories.media_factory import MediaFactory
 
+
 class TestCreateMediaService:
     def test_create_media_service(self, client, db_session):
         media = MediaFactory()

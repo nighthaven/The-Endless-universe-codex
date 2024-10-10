@@ -1,9 +1,12 @@
 from pydantic import BaseModel, ConfigDict
+
 from src.models.media_models import MediaName
+
 
 class MediaFormCreation(BaseModel):
     name: MediaName
     description: str
+
 
 class MediaResponseModel(BaseModel):
     id: int
