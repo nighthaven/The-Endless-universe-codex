@@ -1,0 +1,8 @@
+# Ignorer tous les fichiers __pycache__
+__pycache__/
+
+# ignorez les variables d'environnement
+*.env
+.env.test
+
+.idea/
