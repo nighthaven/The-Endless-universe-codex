@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import {Fragment, useEffect} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { selectFireflies } from "../../store/background/background.selector"; // Importer le selector
 import { addFirefly } from "../../store/background/background.reducer"; // Importer l'action
 
-import "./background.styles.scss";
+import "./firefly.styles.scss";
 
 const createFirefly = () => ({
     id: Math.random(),
@@ -12,7 +12,7 @@ const createFirefly = () => ({
     animationDuration: `${Math.random() * 5 + 5}s`,
 });
 
-const BackgroundComponent = () => {
+const FireflyComponent = () => {
     const dispatch = useDispatch();
     const fireflies = useSelector(selectFireflies); // Utiliser le selector pour obtenir les lucioles
 
@@ -27,7 +27,7 @@ const BackgroundComponent = () => {
     }, [dispatch]);
 
     return (
-        <div className="background">
+        <Fragment>
             {fireflies.map((firefly) => {
                 return (
                     <div
@@ -41,8 +41,8 @@ const BackgroundComponent = () => {
                     ></div>
                 );
             })}
-        </div>
+        </Fragment>
     );
 };
 
-export default BackgroundComponent;
+export default FireflyComponent;

@@ -1,0 +1,43 @@
+.navigation {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo-container {
+  font-size: 24px;
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.logo {
+  background-image: url("../../img/logocodex.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  width: 50px;
+  height: 50px;
+}
+
+.logo:hover {
+  background-image: url("../../img/logocodexonhover.png");
+}
+
+.links-container {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  margin-right: 20px;
+}
+
+.nav-links:hover {
+  color: #fd6400;
+}
+
