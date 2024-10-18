@@ -1,9 +1,6 @@
 import enum
-import typing
-import uuid
 
 from sqlalchemy import Column, Enum, Integer, String
-from sqlalchemy.dialects.postgresql import UUID
 from src.models import Base
 
 
