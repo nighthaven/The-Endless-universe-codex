@@ -8,6 +8,7 @@ from src.models.media_models import Media, MediaName
 from src.models.users_models import User
 from src.serializer.anomalies_serializer import AnomalyBase, AnomalyResponseModel
 from src.services.anomaly_services import AnomalyService
+from src.services.media_services import MediaService
 from src.utils.Oauth2 import get_current_user
 
 router = APIRouter(
@@ -21,12 +22,12 @@ router = APIRouter(
     status_code=status.HTTP_201_CREATED,
 )
 def create_anomaly(
-    media_service: Annotated[Any, Depends(AnomalyService)],
+    anomaly_service: Annotated[Any, Depends(AnomalyService)],
+    media_service: Annotated[Any, Depends(MediaService)],
     anomalyFormCreation: AnomalyBase,
-    db: Annotated[Session, Depends(get_db)],
     current_user: User = Depends(get_current_user),
 ):
-    media = db.query(Media).filter(Media.name == anomalyFormCreation.media_name).first()
+    media = media_service.get_by_name(anomalyFormCreation.media_name)
     if not media:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="media not found"
@@ -38,7 +39,7 @@ def create_anomaly(
         image=anomalyFormCreation.image,
         media_id=media.id,
     )
-    new_anomaly = media_service.create(new_anomaly)
+    new_anomaly = anomaly_service.create(new_anomaly)
     return new_anomaly
 
 
@@ -62,7 +63,7 @@ def get_all_anomalies(
             name=anomaly.name,
             description=anomaly.description,
             image=anomaly.image,
-            media_name=anomaly.media.name, # type: ignore[attr-defined]
+            media_name=anomaly.media.name,  # type: ignore[attr-defined]
         )
         for anomaly in anomalies
     ]
