@@ -9,6 +9,7 @@ from sqlalchemy.orm import sessionmaker
 from src.main import app
 from src.models import get_db
 from src.utils.Oauth2 import create_access_token
+from tests.factories.anomalies_factory import AnomalyFactory
 from tests.factories.media_factory import MediaFactory
 from tests.factories.users_factory import UserFactory
 
@@ -34,6 +35,7 @@ app.dependency_overrides[get_db] = override_get_db
 def add_factories(db_session):
     UserFactory._meta.sqlalchemy_session = db_session
     MediaFactory._meta.sqlalchemy_session = db_session
+    AnomalyFactory._meta.sqlalchemy_session = db_session
 
 
 @pytest.fixture

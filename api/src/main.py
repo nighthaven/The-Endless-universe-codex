@@ -1,5 +1,6 @@
 from fastapi import Depends, FastAPI
 from src.models.users_models import User
+from src.routes.anomalies_routes import router as anomalies_router
 from src.routes.auth_route import router as login_router
 from src.routes.media_routes import router as media_router
 from src.routes.users_routes import router as user_router
@@ -10,6 +11,7 @@ app = FastAPI()
 app.include_router(user_router)
 app.include_router(login_router)
 app.include_router(media_router)
+app.include_router(anomalies_router)
 
 # test_model.Base.metadata.create_all(engine)
 

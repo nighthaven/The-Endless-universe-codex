@@ -4,5 +4,6 @@ __pycache__/
 # ignorez les variables d'environnement
 *.env
 .env.test
+.env.dev
 
 .idea/
