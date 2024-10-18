@@ -1,6 +1,10 @@
+import os
+
 from src.models.media_models import MediaName
 from tests.factories.anomalies_factory import AnomalyFactory
 from tests.factories.media_factory import MediaFactory
+
+IMAGE_BASE_PATH = os.path.join("public", "static", "image", "endlesslegend")
 
 
 class TestCreateAnomaly:
@@ -9,7 +13,7 @@ class TestCreateAnomaly:
         anomaly = {
             "name": "anomalie anormale",
             "description": "une très étrange anomalie que voila",
-            "image": "images/endlesslegend/anomalies/Anomalies-Endless L-1.png",
+            "image": "Anomalies-Endless L-1.png",
             "media_name": media.name.value,
         }
 
@@ -17,7 +21,9 @@ class TestCreateAnomaly:
         assert response.status_code == 201
         assert response.json()["name"] == anomaly["name"]
         assert response.json()["description"] == anomaly["description"]
-        assert response.json()["image"] == anomaly["image"]
+        assert response.json()["image"] == os.path.join(
+            IMAGE_BASE_PATH, anomaly["image"]
+        )
         assert response.json()["media_id"] == media.id
 
     def test_create_anomaly_with_unknown_client(self, client):
@@ -25,7 +31,7 @@ class TestCreateAnomaly:
         anomaly = {
             "name": "anomalie anormale",
             "description": "une très étrange anomalie que voila",
-            "image": "images/endlesslegend/anomalies/Anomalies-Endless L-1.png",
+            "image": "Anomalies-Endless L-1.png",
             "media_name": media.name.value,
         }
         response = client.post("/anomalies", json=anomaly)

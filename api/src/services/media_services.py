@@ -19,3 +19,7 @@ class MediaService:
     def get_all(self):
         media = self.db.query(Media).all()
         return media
+
+    def get_by_name(self, name):
+        media = self.db.query(Media).filter(Media.name == name).first()
+        return media
