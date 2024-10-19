@@ -6,11 +6,11 @@ from src.models import get_db
 from src.models.users_models import User, UserRole
 
 
-class UserService:
+class UserRepository:
     def __init__(self, db: Annotated[Session, Depends(get_db)]):
         self.db = db
 
-    def create_user(self, user_data: User) -> User:
+    def save_user(self, user_data: User) -> User:
         user = self.db.query(User).filter_by(email=user_data.email).one_or_none()
         if user:
             raise HTTPException(

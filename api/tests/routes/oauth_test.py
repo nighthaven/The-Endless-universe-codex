@@ -2,9 +2,9 @@ import uuid
 
 import pytest
 from jose import jwt
-from src.serializer.user_serializer import TokenResponse
+from src.schemas.authentication.token_response import TokenResponse
 from src.utils.Oauth2 import ALGORYTHM, SECRET_KEY
-from tests.factories.users_factory import UserFactory
+from tests.fixtures.users_factory import UserFactory
 
 
 class TestLoginUser:

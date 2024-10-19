@@ -3,8 +3,9 @@ from typing import Annotated, Any, List
 from fastapi import APIRouter, Depends, status
 from src.models.media_models import Media
 from src.models.users_models import User
-from src.serializer.media_serializer import MediaFormCreation, MediaResponseModel
-from src.services.media_services import MediaService
+from src.repositories.media_repository import MediaRepository
+from src.schemas.form_creation.media_form_creation import MediaFormCreation
+from src.schemas.response.media_response import MediaResponse
 from src.utils.Oauth2 import get_current_user
 
 router = APIRouter(
@@ -13,11 +14,9 @@ router = APIRouter(
 )
 
 
-@router.post(
-    "/", status_code=status.HTTP_201_CREATED, response_model=MediaResponseModel
-)
+@router.post("/", status_code=status.HTTP_201_CREATED, response_model=MediaResponse)
 def create_media(
-    media_service: Annotated[Any, Depends(MediaService)],
+    media_repository: Annotated[Any, Depends(MediaRepository)],
     media: MediaFormCreation,
     current_user: User = Depends(get_current_user),
 ):
@@ -25,11 +24,11 @@ def create_media(
         name=media.name,
         description=media.description,
     )
-    new_media = media_service.create(new_media)
+    new_media = media_repository.save(new_media)
     return new_media
 
 
-@router.get("/", response_model=List[MediaResponseModel])
-def get_all_media(media_service: Annotated[Any, Depends(MediaService)]):
-    media = media_service.get_all()
+@router.get("/", response_model=List[MediaResponse])
+def get_all_media(media_repository: Annotated[Any, Depends(MediaRepository)]):
+    media = media_repository.get_all()
     return media

@@ -1,5 +1,5 @@
 from src.models.users_models import UserRole
-from tests.factories.users_factory import UserFactory
+from tests.fixtures.users_factory import UserFactory
 
 
 class TestCreateUser:
