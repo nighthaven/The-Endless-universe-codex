@@ -7,7 +7,14 @@ from src.config import settings
 
 
 def install_models() -> None:
-    from src.models import anomalies_models, factions_models, media_models, users_models
+    from src.models import (
+        anomalies_models,
+        faction_description_model,
+        factions_models,
+        media_models,
+        users_models,
+        wonders_models,
+    )
 
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://postgres:{settings.database_password}@{settings.database_hostname}:{settings.database_port}/{settings.database_name}"

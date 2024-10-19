@@ -1,8 +1,6 @@
 import factory
-from factory import SubFactory
 from src.models.anomalies_models import Anomaly
-from src.models.media_models import MediaName
-from tests.factories.media_factory import MediaFactory
+from tests.fixtures.media_factory import MediaFactory
 
 
 class AnomalyFactory(factory.alchemy.SQLAlchemyModelFactory):

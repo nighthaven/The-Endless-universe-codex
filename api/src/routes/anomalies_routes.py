@@ -1,15 +1,14 @@
-import os
 from typing import Annotated, Any, List, Optional
 
 from fastapi import APIRouter, Depends, HTTPException, status
-from sqlalchemy.orm import Session, joinedload
-from src.models import get_db
+from src.enums.media_name import MediaName
 from src.models.anomalies_models import Anomaly
-from src.models.media_models import Media, MediaName
 from src.models.users_models import User
-from src.serializer.anomalies_serializer import AnomalyBase, AnomalyResponseModel
-from src.services.anomaly_services import AnomalyService
-from src.services.media_services import MediaService
+from src.repositories.anomaly_repository import AnomalyRepository
+from src.repositories.media_repository import MediaRepository
+from src.schemas.form_creation.anomaly_form_creation import AnomalyFormCreation
+from src.schemas.response.anomalies_response import AnomalyResponse
+from src.services.link_service import LinkService
 from src.utils.Oauth2 import get_current_user
 
 router = APIRouter(
@@ -17,58 +16,50 @@ router = APIRouter(
     tags=["anomalies"],
 )
 
-IMAGE_BASE_PATH = os.path.join("public", "static", "image", "endlesslegend")
-
 
 @router.post(
     "/",
     status_code=status.HTTP_201_CREATED,
 )
 def create_anomaly(
-    anomaly_service: Annotated[Any, Depends(AnomalyService)],
-    media_service: Annotated[Any, Depends(MediaService)],
-    anomalyFormCreation: AnomalyBase,
+    anomaly_repository: Annotated[Any, Depends(AnomalyRepository)],
+    link_service: Annotated[LinkService, Depends(LinkService)],
+    media_repository: Annotated[Any, Depends(MediaRepository)],
+    anomaly_form_creation: AnomalyFormCreation,
     current_user: User = Depends(get_current_user),
 ):
-    media = media_service.get_by_name(anomalyFormCreation.media_name)
+    media = media_repository.get_by_name(anomaly_form_creation.media_name)
     if not media:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="media not found"
         )
 
-    image_path = os.path.join(IMAGE_BASE_PATH, anomalyFormCreation.image)
-
+    image_path = link_service.get_image_anomalies_link(
+        media.name.name, anomaly_form_creation.image
+    )
     new_anomaly = Anomaly(
-        name=anomalyFormCreation.name,
-        description=anomalyFormCreation.description,
+        name=anomaly_form_creation.name,
+        description=anomaly_form_creation.description,
         image=image_path,
         media_id=media.id,
     )
-    new_anomaly = anomaly_service.create(new_anomaly)
+    new_anomaly = anomaly_repository.save(new_anomaly)
     return new_anomaly
 
 
-@router.get("/", response_model=List[AnomalyResponseModel])
+@router.get("/", response_model=List[AnomalyResponse])
 def get_all_anomalies(
-    db: Annotated[Session, Depends(get_db)],
+    anomaly_repository: AnomalyRepository = Depends(AnomalyRepository),
     media: Optional[MediaName] = None,
     anomaly_name: Optional[str] = None,
-) -> List[AnomalyResponseModel]:
-    anomalies_query = db.query(Anomaly).options(joinedload(Anomaly.media))
-    if anomaly_name:
-        anomalies_query = anomalies_query.filter(
-            Anomaly.name.ilike(f"%{anomaly_name}%")
-        )
-    if media:
-        media_query = db.query(Media).filter(Media.name == media).one()
-        anomalies_query = anomalies_query.filter(Anomaly.media_id == media_query.id)
-    anomalies = anomalies_query.all()
+) -> List[AnomalyResponse]:
+    anomaly_query = anomaly_repository.find_by(media, anomaly_name)
     return [
-        AnomalyResponseModel(
+        AnomalyResponse(
             name=anomaly.name,
             description=anomaly.description,
             image=anomaly.image,
-            media_name=anomaly.media.name,  # type: ignore[attr-defined]
+            media_name=anomaly.media.name,
         )
-        for anomaly in anomalies
+        for anomaly in anomaly_query
     ]

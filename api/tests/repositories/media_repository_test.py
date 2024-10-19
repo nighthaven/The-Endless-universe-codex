@@ -1,21 +1,21 @@
-from src.services.media_services import MediaService
-from tests.factories.media_factory import MediaFactory
+from src.repositories.media_repository import MediaRepository
+from tests.fixtures.media_factory import MediaFactory
 
 
-class TestCreateMediaService:
-    def test_create_media_service(self, client, db_session):
+class TestCreateMediaRepository:
+    def test_create_media_repository(self, client, db_session):
         media = MediaFactory()
-        media_service = MediaService(db_session)
-        response = media_service.create(media)
+        media_repository = MediaRepository(db_session)
+        response = media_repository.save(media)
         assert response.name == media.name
         assert response.description == media.description
 
-    def test_get_all_media_services(self, client, db_session):
+    def test_get_all_media_repository(self, client, db_session):
         media_1 = MediaFactory()
         media_2 = MediaFactory()
         media_3 = MediaFactory()
-        media_service = MediaService(db_session)
-        response = media_service.get_all()
+        media_repository = MediaRepository(db_session)
+        response = media_repository.get_all()
         assert len(response) == 3
         assert response[0].name == media_1.name
         assert response[1].name == media_2.name

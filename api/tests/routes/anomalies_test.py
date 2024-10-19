@@ -1,10 +1,12 @@
 import os
 
 from src.models.media_models import MediaName
-from tests.factories.anomalies_factory import AnomalyFactory
-from tests.factories.media_factory import MediaFactory
+from tests.fixtures.anomalies_factory import AnomalyFactory
+from tests.fixtures.media_factory import MediaFactory
 
-IMAGE_BASE_PATH = os.path.join("public", "static", "image", "endlesslegend")
+IMAGE_BASE_PATH = os.path.join(
+    "public", "static", "image", "ENDLESS_SPACE_2", "anomalies"
+)
 
 
 class TestCreateAnomaly:
@@ -13,7 +15,7 @@ class TestCreateAnomaly:
         anomaly = {
             "name": "anomalie anormale",
             "description": "une très étrange anomalie que voila",
-            "image": "Anomalies-Endless L-1.png",
+            "image": "Anomalies-Endless-L-1",
             "media_name": media.name.value,
         }
 
@@ -22,7 +24,7 @@ class TestCreateAnomaly:
         assert response.json()["name"] == anomaly["name"]
         assert response.json()["description"] == anomaly["description"]
         assert response.json()["image"] == os.path.join(
-            IMAGE_BASE_PATH, anomaly["image"]
+            IMAGE_BASE_PATH, f"{anomaly["image"]}.png"
         )
         assert response.json()["media_id"] == media.id
 
