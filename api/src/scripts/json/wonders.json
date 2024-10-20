@@ -1,0 +1,50 @@
+[
+  {
+    "name": "Dust Nebula",
+    "description": "A warning beacon into the entire nebula rich with Dust tells its story. Due to poorly-controlled research, a strain of Dust ran wild and self-replicated out of control. By the time it was reined in, entire planetary systems had been converted to Dust, and no food remained for the handful of surviving researchers that left that grim note.",
+    "image": "Wonders-ES2-1",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "The Seventeen Thousand Islands Bridge",
+    "description": "An archipelago of natural islands that span the gap between planet surface and space, hanging in the darkness like glittering stepping stones. The source of the power that maintains the islands in position is unknown, but many speculate that Endless technology is responsible.",
+    "image": "Wonders-ES2-2",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "The Fallen Gardens",
+    "description": "A space graveyard for vast structures of unknown provenance, the Fallen Gardens are a twilight world of ancient technology long forgotten and dormant. Some speculate the structures are starships of once-marvelous engineering now consigned to rust, strange mottled patches of fungus and vegetation crawling across their surfaces. Others claim they are the sloughed skins of Gods. What is certain is that the gardens are far from dead.",
+    "image": "Wonders-ES2-3",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "The Platform of Ys",
+    "description": "The world was once the greatest shipyard of the concrete Endless. The skies above the planet darkened with the enormous spacedocks that worked day and night, building and repairing fleets. While much of the technology is lost, the platforms still provide both living space and planetary defense.",
+    "image": "Wonders-ES2-4",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Tree of Worlds",
+    "description": "Originally a thing of branch and root, this hyper-grown life form reaches from deep within the planetary crust out into space. A strange, unique artifact of some biological experiment gone berserk, this 'tree' houses cities and river systems, mines and farms. Certain heavily mutated branches even reach out into the vacuum of space, filtering Dust and minerals to feed its always-hungry limbs.",
+    "image": "Wonders-ES2-5",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Tunneled Slipgates",
+    "description": "A natural anomaly whose probable existence is less than zero, this series of natural quantum-linked transport gates create “tunnels” from the planets’ surfaces to various points in the star system. This piece of space-time is full of bridges, shortcuts and holes, allowing rapid transport throughout the system.",
+    "image": "Wonders-ES2-6",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Husk of Knowledge",
+    "description": "Auriga housed the greatest site for the study of xenobiology ever created by the genius of the Endless. A towering achievement of industry and science, the surface and crust of the planet were a warren of laboratories, biospheres, and research centers. When the bombs fell during the Dust Wars, this enormous installation became the greatest expanse of ruins -- and store of lost knowledge -- in the known galaxy. Should the laboratories ever be repaired and the data recovered, the scientific benefit would be unimaginable.",
+    "image": "Wonders-ES2-7",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Spotora's Sanctum",
+    "description": "Also known as the Icarael's Watch, this is the one laboratory in all of the Endless-controlled galaxy that had the best claim to the discovery of the science of virtualization. Spotora Ortamm and her team are credited with the first consistent, replicable method for the virtualization of a sentient mind; the notes and equipment have enormous value in spite of their age.",
+    "image": "Wonders-ES2-8",
+    "media_name": "Endless Space 2"
+  }
+]
