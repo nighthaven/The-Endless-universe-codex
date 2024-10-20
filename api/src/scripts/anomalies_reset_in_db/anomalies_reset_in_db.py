@@ -3,26 +3,25 @@ from pathlib import Path
 
 sys.path.append(str(Path(__file__).resolve().parents[3]))
 import json
-from typing import Annotated, List, Optional
+from typing import Annotated
 
 from fastapi import Depends
-from pydantic import BaseModel
 from sqlalchemy.orm import Session
 from src.models import SessionLocal, get_db
 from src.models.anomalies_models import Anomaly
 from src.models.media_models import Media
 from src.services.link_service import LinkService
 
-json_file_path = Path(__file__).parents[1] / "json" / "anomalies.json"
+json_file_path = Path(__file__).parents[0] / "anomalies.json"
+
 
 with open(json_file_path, "r") as file:
     anomalies_data = json.load(file)
 
 
 def delete_all_anomalies(db: Session):
-    # Supprime toutes les lignes de la table Anomaly
     db.query(Anomaly).delete()
-    db.commit()  # Confirme les changements
+    db.commit()
 
 
 def import_all_anomalies(db: Annotated[Session, Depends(get_db)]):
@@ -52,11 +51,9 @@ def import_all_anomalies(db: Annotated[Session, Depends(get_db)]):
 
 
 if __name__ == "__main__":
-    db = SessionLocal()  # Utilise directement le sessionmaker
+    db = SessionLocal()
     try:
         delete_all_anomalies(db)
         import_all_anomalies(db)
     finally:
         db.close()
-    delete_all_anomalies(db)
-    import_all_anomalies(db)
