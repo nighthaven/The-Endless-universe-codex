@@ -1,0 +1,512 @@
+[
+  {
+    "name": "Azotic Exotics",
+    "description": "A fecund stench emanates from these weird plants, the earth around them a fertile compost. Crops planted here show astonishing growth.",
+    "image": "Anomalies-EL-1",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Black-Dust",
+    "description": "A form of naturally-occurring deposit, these springs of gold and black provide a source of never-ending fuel.",
+    "image": "Anomalies-EL-2",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Black Earth",
+    "description": "The ancient, loamy soil of this region is rich in bacteria and nutrients. Farming will be unusually productive here.",
+    "image": "Anomalies-EL-3",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Botanical Garden",
+    "description": "Grids of neatly-rowed plant species slice this ground, the positions of the many varieties seemingly sown very deliberately by an invisible hand.",
+    "image": "Anomalies-EL-4",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Chromatic Land",
+    "description": "Fields of dizzying colour blanket the ground here. Closer inspection reveals edible multi-hued flowers, glittering with Dust.",
+    "image": "Anomalies-EL-5",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Clay",
+    "description": "Under the influence of fire, the congealed mud of this area is found to harden into sparkling ceramics.",
+    "image": "Anomalies-EL-6",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Crystal Flowers",
+    "description": "The delicate fronds of these glacial plants wax and wane with the sun, inspiring the study of heat. When crushed, small quantities of Dust are released.",
+    "image": "Anomalies-EL-7",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Dragon Tree",
+    "description": "Gnarled roots and blackened trunks end in flame-tipped branches. Their uses are legion. Farmers gather their ashes, builders fell their timber, and fire-mages climb them to learn their secrets.",
+    "image": "Anomalies-EL-8",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Earthspine",
+    "description": "Local dwellers refer to these white shards as the Leviathan's Spine. Adventurous folk often scale these columns to gather the unusual crystals embedded in the rock.",
+    "image": "Anomalies-EL-9",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Earth Tower",
+    "description": "Struts of rock form a pyramidal structure, the stone easily sculptable. Draftsmen will enjoy working with this material.",
+    "image": "Anomalies-EL-10",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Escaped Specimens",
+    "description": "Hardy beasts roam the area, valued not only for their meat, but for their tough bones and thick pelts.",
+    "image": "Anomalies-EL-11",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Geothermal Pit",
+    "description": "These geologically active sites are noisy, warm, and a good source of energy.",
+    "image": "Anomalies-EL-12",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Geysers",
+    "description": "Superheated steam blasts skywards then cascades to the ground. These wonders turn your philosophers' minds to the workings of the subterranean world; your builders' to its exploitation.",
+    "image": "Anomalies-EL-13",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Golden Tree",
+    "description": "Wind-blown spores of Dust seem to be drawn to this magnificent tree, whereupon they knit themselves into the slender branches.",
+    "image": "Anomalies-EL-14",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Hidden Springs",
+    "description": "Channels of fresh water crisscross the landscape, providing ideal farming grounds and invigorating drinking sources.",
+    "image": "Anomalies-EL-15",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Ice Sculptures",
+    "description": "The sonic properties of these cathedrals of vaulting ice is remarkable; sounds are swallowed or amplified depending on your location. The science of acoustics is born.",
+    "image": "Anomalies-EL-16",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Igloo Larvae",
+    "description": "A strange breed of worm grows an igloo-like shell around itself, then abandons it to grow another. These become huts for living, storage, and emergency shelter in cold climates.",
+    "image": "Anomalies-EL-17",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Life Tree",
+    "description": "The canopy of this enormous tree houses a cornucopia of life that is equally welcome in the lab or on the table.",
+    "image": "Anomalies-EL-18",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Massive Tree",
+    "description": "An abomination of a tree, the trunk is a grotesque medley of a hundred differing barks and the canopy reveals a dozen types of foliage. Timber and fruit will certainly be plentiful.",
+    "image": "Anomalies-EL-19",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Mineral Rich",
+    "description": "Vast splinters of mineral-encrusted stone thrust from the rocky ground. Some of these inorganics are sure to have useful industrial applications.",
+    "image": "Anomalies-EL-20",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Moss Pearls",
+    "description": "A beguiling hum accompanies the phosphorescent light of these strange plants, and visitors who eat the delicious fruits claim to have inspirational visions.",
+    "image": "Anomalies-EL-21",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Mutant Marsh",
+    "description": "Fetid gases bubble up amongst a profusion of riotous plantlife. Who knows what strange elixirs might come from such a morass?",
+    "image": "Anomalies-EL-22",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Mychordia",
+    "description": "The gaping maws of these leathery growths are reminiscent of benthic horrors, yet seductive music emanates from their mouths and their flesh makes a pungent bread.",
+    "image": "Anomalies-EL-23",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Oasis",
+    "description": "A wondrous sight for parched travellers in hot deserts, these oases are no mirage. Animals bathe languidly in the murky shallows, making for easy hunting.",
+    "image": "Anomalies-EL-24",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Ruby Cactus Fields",
+    "description": "A hot climate plant whose hard red fruits can be used by craftsmen or sold as jewelry.",
+    "image": "Anomalies-EL-25",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Rumbling Stones",
+    "description": "In this place of constant geological turmoil, footing is dangerous but mining is profitable.",
+    "image": "Anomalies-EL-26",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Salt Desert",
+    "description": "The preservative properties of salt are well known. This site improves the longevity of foodstocks, and provides a valuable trade commodity.",
+    "image": "Anomalies-EL-27",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Spiral Rock Peel",
+    "description": "Strange underground landmass movements creates these bizarre rock peelings. Their shape and exposed nature makes them easy to gather.",
+    "image": "Anomalies-EL-28",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Stasis Pillar",
+    "description": "The skin prickles close to this eye-defying wonder, and no birds fly in its vicinity. Natural philosophers travel for leagues to analyze its properties.",
+    "image": "Anomalies-EL-29",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Steel Stalks",
+    "description": "A blacksmith's delight, these unusual plants draw heavy metals into bulbous pods ripe for plucking.",
+    "image": "Anomalies-EL-30",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Weaver Worms",
+    "description": "Giant silkworms furrow these ice sheets, leaving behind great roads of magical thread. As well as being incredibly strong, the silks can be woven into fabulous fabrics.",
+    "image": "Anomalies-EL-31",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Wizard Stone",
+    "description": "The centrepiece of this stone arch resembles a huge flaming eye. Lustrous objects flex and jolt in its proximity, a portent of strange magics.",
+    "image": "Anomalies-EL-32",
+    "media_name": "Endless Legend"
+  },
+  {
+    "name": "Garden of Eden",
+    "description": "Lush and pleasant, with a single year-round season of moderate temperatures, life is good on this planet. Everyone benefits from its natural wealth: Residents, tourists, businessmen, and scientists.",
+    "image": "Anomalies-ES2-1",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Dust Ruins",
+    "description": "Many ruins from the time of the Endless were Dust-enhanced structures or traditional buildings that preceded the Dust era. On very rare occasions, however, one can find entire structures built uniquely from this valuable resource.",
+    "image": "Anomalies-ES2-2",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Friendly Locals",
+    "description": "Native inhabitants can be classified in one of two ways: those who view you as friends, and those who view you as dinner. Fortunately, this is the former case. By accelerating the colonists' adaptation to the local ecosystem, they permit a higher density of population than is common on a planet of this size.",
+    "image": "Anomalies-ES2-3",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Rich Soil",
+    "description": "The soil of this planet is rich in bacteria and nutrients; crops will grow well and livestock will be healthy.",
+    "image": "Anomalies-ES2-4",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Mineral Rich",
+    "description": "Due to its formation from Dust clouds that spun off from the system's sun, the crust of this planet is unusually rich in minerals.",
+    "image": "Anomalies-ES2-5",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Hadopelagic Life",
+    "description": "Having deep oceans that are rich with life, this planet is abundant in hadopelagic creatures -- those that have adapted to the lightless environment at the bottom of the ocean and are tolerant of the tremendous pressures. They are not only a source of food, but provide useful scientific information on extremophilic life forms.",
+    "image": "Anomalies-ES2-6",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Antonov Rings",
+    "description": "Dense rings of beige and brown asteroids with erratic orbits, the planetary rings are fascinating for tourists and equally interesting for scientific studies.",
+    "image": "Anomalies-ES2-7",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Huygens Rings",
+    "description": "A rich, multi-colored band of asteroids surrounds this planet. Reflecting the star's light in green, gray, purple, white, and blue, they are a highly prized tourist destination as well as a ready source of minerals and alloys.",
+    "image": "Anomalies-ES2-8",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Hollow Planet",
+    "description": "About as anomalous as an anomaly can be, this planet has vast subterranean spaces that are hundreds of cubic kilometers in size. Fascinating to tourists and scientists, it adds a great deal of habitable space that is highly defensible.",
+    "image": "Anomalies-ES2-9",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Ice-10",
+    "description": "A rare form of ice that is caused by water crystallizing under high pressures, Ice-10 is interesting for its thermodynamic properties. Its existence at only extremely low temperatures, however, means that the planet has a dangerous and hostile environment.",
+    "image": "Anomalies-ES2-10",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Permanent Monsoon",
+    "description": "The good news: This is a water-rich planet and therefore of great value to agriculture. The bad news: This water is generally delivered horizontally in your face by gale-force winds. Tides and winds, fortunately, also provide ready sources of (wet) energy.",
+    "image": "Anomalies-ES2-11",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Metallic Waters",
+    "description": "Rich in deposits of copper, iron, zinc, and other metals, the lakes and geysers of this planet are stunning to behold. The high metal content of the waters is also a boon to industrial development, as highly purified ores can be obtained through simple filtration.",
+    "image": "Anomalies-ES2-12",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Aurora Waves",
+    "description": "Gleaming, multi-colored auroras last all day and night, moving eerily across the surface of the planet. Though their properties are greatly appreciated by residents and tourists, the electromagnetic residue is a headache for scientists.",
+    "image": "Anomalies-ES2-13",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Dense Atmosphere",
+    "description": "Lava planets in particular, due to the continual combustion and high temperature of their crust, have atmospheres that are dense in organic compounds. Though it renders them a challenge to colonize, this anomaly also helps to increase the agricultural output.",
+    "image": "Anomalies-ES2-14",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Psychoactive Air",
+    "description": "With an atmosphere saturated by complex chemical compounds, life on this planet becomes interesting indeed if one does not breathe through a filter. Though the inevitable wandering thoughts make serious scientific research a bit difficult, it cannot be denied that everyone who lives here is really, really happy.",
+    "image": "Anomalies-ES2-15",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Geothermic Activity",
+    "description": "With lava rifts that pulse constantly and vast networks of minor volcanoes, two things are very clear about this planet: One: Industry can be powered cheaply and efficiently; Two: Inhabitants must watch where they step.",
+    "image": "Anomalies-ES2-16",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Seismic Activity",
+    "description": "For those who like their rock and roll on a planetary level, this is the ideal home. Be warned, however, that though geo-physicists will adore it, it makes for nervous inhabitants and expensive construction.",
+    "image": "Anomalies-ES2-17",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Long Season",
+    "description": "With an unusually long orbital ellipse, the planet has very long seasons and thus is exposed to extremes of cold in winter and heat in summer. While this is fascinating for scientific experiment, it is difficult for agriculture and makes everyday life stressful.",
+    "image": "Anomalies-ES2-18",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Meteor Strikes",
+    "description": "While frequent and heavy meteor showers deliver precious metals for free, they also make life dangerous and require continual repairs to any exposed object. Radioactive and loaded with heavy isotopes, the meteors also wreak havoc with scientific research (and researchers).",
+    "image": "Anomalies-ES2-19",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Polar Tempests",
+    "description": "Exceedingly cold winters and large continental masses drive this planet through cycles of violent weather. This results in heavy wear and tear on infrastructure, and makes farming--and life in general--unpleasant.",
+    "image": "Anomalies-ES2-20",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Strong Magnetic Field",
+    "description": "A large, liquid ferrous core gives this planet strong magnetic fields that fluctuate unpredictably. In order to counter this, much of the work done by industry and science has to undergo the expense of being carefully controlled and shielded.",
+    "image": "Anomalies-ES2-21",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Kessler Syndrome",
+    "description": "An odd remnant of a past, lost civilization, the upper atmosphere of this planet is full of drifting debris. There is a cost to removing these remnants, and space-based experiments as well as satellites must be either expensively protected or often replaced.",
+    "image": "Anomalies-ES2-22",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Acid Rain",
+    "description": "Naturally occurring sulfur fumaroles cause highly acidic rain on this planet. This places heavy constraints on architecture and transport as well as creating a disagreeable atmosphere for the locals.",
+    "image": "Anomalies-ES2-23",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Irradiated",
+    "description": "High levels of cosmic rays coupled with naturally occurring sources such as radon make this planet a dangerous place. There is a high risk of cancer-related diseases, and the radiation levels complicate scientific experimentation.",
+    "image": "Anomalies-ES2-24",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Single Moon",
+    "description": "A single moon orbits this planet, affecting the weather and atmosphere. Occasionally, moons can be the site of ruins and remains of older civilizations.",
+    "image": "Anomalies-ES2-25",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Binary Moon",
+    "description": "Irregularities in orbit and tidal forces can be explained by the existence of these two moons; it is a rare enough phenomenon that some will certainly want to come and either study them, or write sappy ballads in their honor.",
+    "image": "Anomalies-ES2-26",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Multiple Moons",
+    "description": "There are many strange effects that multiple moons can have on orbit, tectonic, and tidal forces. Some sects may even worship them, while other peoples are content to watch them chase each other across the sky.",
+    "image": "Anomalies-ES2-27",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Hostile Fauna",
+    "description": "While the beasts of this planet were first described as 'giant', 'primal', and 'impressive', a more accurate description would have been 'clever, silent, and ravenous.' Though they are eagerly hunted and in fact are a good food source, few people enjoy living on a planet where the food pyramid is in fact a circle.",
+    "image": "Anomalies-ES2-28",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Ancient Ruins",
+    "description": "Search teams discover ruins of one of the many ancient civilizations that have risen and fallen since the birth of the universe. Trade, tourism, and research could potentially benefit from this rare find.",
+    "image": "Anomalies-ES2-29",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Dust Lode",
+    "description": "Once a base or battleground of the Endless civilization, their nanotechnological 'Dust' is omnipresent in the ground and atmosphere.",
+    "image": "Anomalies-ES2-30",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Coral Reefs",
+    "description": "Picturesque, rich, and fascinating, these lush reefs beautify the planet, provide sources of food, and are of interest to tourists (once they have been declared either non-lethal or only partially lethal).",
+    "image": "Anomalies-ES2-31",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Cyber Flora",
+    "description": "A hybrid species that grew from Dust-infected lichen, this nearly indestructible plant can be found thriving even in the harshest conditions. Its beautiful, glossy sheen and interesting bio-technical properties create both a stunning environment and a source of scientific knowledge.",
+    "image": "Anomalies-ES2-32",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Strange Fossils",
+    "description": "What strange beasts were these! Science Officers have discovered the remains of long-dead creatures that appear exceptional in every way -- size, variety, eating habits, and number of limbs. Anthropologists and cosmologists are eager to study these finds",
+    "image": "Anomalies-ES2-33",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Microfactories",
+    "description": "Another innovation of the Endless, some Visited planets were sown with these Dust-built millimeter-scale factories that convert mineral solids into nutrient chains for crops. Adaptable or 'trainable' to a wide range of ecosystems, they are an enormous boon to food production and agricultural labor.",
+    "image": "Anomalies-ES2-34",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Mutated Flora",
+    "description": "An example of biodiversity gone berserk, this planet shows a variety of plant mutations of every size, shape, color, scent, flavor, and psychoactive effect that one could imagine. Some of the more notable results include rich food supplies and ecstatic gourmet chefs.",
+    "image": "Anomalies-ES2-35",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Low Gravity",
+    "description": "A lower density of planetary core effects many things, of which gravity is the most notable. This has advantages for industrial production and makes kids really, really happy.",
+    "image": "Anomalies-ES2-36",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Deserted Cities",
+    "description": "An eerie reminder of yet another lost civilization, deserted cities are scattered across the surface of this planet. Even stranger, many of the buildings and machines are still in working order. If a planet had been conceived to make scientists and engineers happy, it is this one.",
+    "image": "Anomalies-ES2-37",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Molten Springs",
+    "description": "Blessed--or cursed--by volcanic activity close to the surface and a metal-rich crust, geysers of molten metal spew their very dangerous and very valuable contents from numerous points on the planet. Industry and commerce can clearly benefit from this bizarre geology.",
+    "image": "Anomalies-ES2-38",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Shattered Crust",
+    "description": "The surface of this planet is a riot of cliffs, chasms, ridges, and spikes. While the broken surface means that many mineral resources can be easily mined, it also means that transport and construction will be challenging.",
+    "image": "Anomalies-ES2-39",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Komatiite Volcano",
+    "description": "Dude, where's my silica? These volcanoes of ultramafic rock from deep within the planet's mantle are sources of useful metal alloys, and can be cheaply exploited for geothermal energy.",
+    "image": "Anomalies-ES2-40",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Propitious Seasons",
+    "description": "This is not merely a planet that has the benefit of an axial tilt that produces seasonal variations in weather; the seasons and their associated climates lend themselves well to agriculture.",
+    "image": "Anomalies-ES2-41",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Humeris Insidentes",
+    "description": "This planet was inhabited by a highly advanced race that died off when a massive volcanic eruption induced a prolonged winter. The knowledge of their civilization was meticulously documented and stored in bunkers scattered across the planet. Clearly, they expected to rise up after the winter and continue their evolution. Sadly, the bunkers sit unlocked and unused, and the people have returned to the dust. Their knowledge, however, is yours to explore.",
+    "image": "Anomalies-ES2-42",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Poor Soil",
+    "description": "Though not lacking in dirt, the planet is surprisingly low in the nutrients and microbes that turn it into a rich compound that stimulates organic life. As a result, agricultural prospects are worse than usual.",
+    "image": "Anomalies-ES2-43",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "High Gravity",
+    "description": "The unusually dense core of this planet gives it abnormally high gravity for its size. Architecture and industry must be adapted to deal with this. In addition, daily life is tiring and difficult.",
+    "image": "Anomalies-ES2-44",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Behemoth Song",
+    "description": "This strange planet emits natural sound and magnetic waves that imitate musical frequencies. The melodies can only be heard by ships in orbit with all electronics powered off, and their poignant beauty is said to be overwhelming.",
+    "image": "Anomalies-ES2-45",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Talking World",
+    "description": "There is a continual series of radio wave transmission from variable sites on the planet. Though they appear to be artificial and thus have some purpose, the transmitters have yet to be identified and the code or language remains an unsolved mystery.",
+    "image": "Anomalies-ES2-45",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Fearful Symmetry",
+    "description": "The planet's features exhibit a bilateral symmetry that is unnatural for its mathematical precision. One can only speculate as to what lies underneath the outer layers to cause this.",
+    "image": "Anomalies-ES2-46",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Artificial Life",
+    "description": "Maybe it is the combination of billions of precise factors, or maybe it is pure luck, but every attempt to create artificial life on this Crescent seems to succeed.",
+    "image": "Anomalies-ES2-32",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Dust Accretor",
+    "description": "Large quantities of Dust can be found in the dark nooks of this Crescent, as some of the materials used in its construction seem to attract ambient Dust.",
+    "image": "Anomalies-ES2-2",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Flickering Matter",
+    "description": "As a material construction created by an immaterial being, sometimes this Crescent flickers and loses its materiality for a few moments. Although this is fortuitous for the understanding of matter itself, it may not be such good news when what you are trying to build disappears unpredictably.",
+    "image": "Anomalies-ES2-10",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Pseudo-Atmosphere",
+    "description": "A pseudo-atmosphere appeared during the creation of this Crescent. The way light passes through it creates unique visuals, so fascinating that even the most scientific minds tend to become aesthetes.",
+    "image": "Anomalies-ES2-37",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Low-Quality Foundations",
+    "description": "The construction of this Crescent was hasty, and as a result, malfunctions are numerous and frequent.",
+    "image": "Anomalies-ES2-38",
+    "media_name": "Endless Space 2"
+  },
+  {
+    "name": "Uninhabitable Area",
+    "description": "Corruption on the materials used to build a section of this Crescent made it completely uninhabitable. Although the impact is relatively minor, this deserted section remains a rather depressing symbol of failure.",
+    "image": "Anomalies-ES2-39",
+    "media_name": "Endless Space 2"
+  }
+]
