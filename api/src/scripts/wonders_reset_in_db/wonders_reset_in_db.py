@@ -1,8 +1,6 @@
 import sys
 from pathlib import Path
 
-
-
 sys.path.append(str(Path(__file__).resolve().parents[3]))
 import json
 from typing import Annotated
@@ -11,8 +9,8 @@ from fastapi import Depends
 from sqlalchemy.orm import Session
 from src.models import SessionLocal, get_db
 from src.models.media_models import Media
-from src.services.link_service import LinkService
 from src.models.wonders_models import Wonder
+from src.services.link_service import LinkService
 
 json_file_path = Path(__file__).parents[0] / "wonders.json"
 
