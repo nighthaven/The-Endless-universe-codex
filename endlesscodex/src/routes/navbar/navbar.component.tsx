@@ -14,7 +14,7 @@ const NavbarComponent = () => {
                     <Link className="nav-links" to="/faction">Faction</Link>
                 </div>
                 <div className="links-container">
-                    <Link className="nav-links" to="/unity">Unity</Link>
+                    <Link className="nav-links" to="/anomalies">Anomalies/wonders</Link>
                 </div>
                 <div className="links-container">
                     <Link className="nav-links" to="/about">About</Link>
