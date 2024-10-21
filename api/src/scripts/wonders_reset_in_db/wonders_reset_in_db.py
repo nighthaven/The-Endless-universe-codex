@@ -1,6 +1,8 @@
 import sys
 from pathlib import Path
 
+from sqlalchemy import text
+
 sys.path.append(str(Path(__file__).resolve().parents[3]))
 import json
 from typing import Annotated
@@ -20,7 +22,9 @@ with open(json_file_path, "r") as file:
 
 
 def delete_all_wonders(db: Session):
+    seq_name = db.execute(text("SELECT pg_get_serial_sequence('media', 'id')")).scalar()
     db.query(Wonder).delete()
+    db.execute(text(f"ALTER SEQUENCE {seq_name} RESTART WITH 1"))
     db.commit()
 
 
