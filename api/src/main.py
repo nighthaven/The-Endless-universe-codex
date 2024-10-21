@@ -1,4 +1,6 @@
 from fastapi import Depends, FastAPI
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from src.models.users_models import User
 from src.routes.anomalies_routes import router as anomalies_router
 from src.routes.auth_route import router as login_router
@@ -16,6 +18,16 @@ app.include_router(anomalies_router)
 app.include_router(wonders_router)
 
 # test_model.Base.metadata.create_all(engine)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+app.mount("/public", StaticFiles(directory="public"), name="public")
 
 
 @app.get("/")
