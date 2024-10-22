@@ -1,54 +1,45 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
+import React, {Fragment, useEffect, Suspense} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState, AppDispatch } from '../../store/store';
+import { fetchAnomalies } from '../../store/anomalies/anomalies.reducer';
+import BackgroundComponent from "../../component/background/background.component";
+import ItemLayoutComponent from "../../component/itemlayout/item-layout.component";
 
-interface Anomaly {
-  id: number;
-  name: string;
-  description: string;
-  image: string;
-}
+import {BorderParent, InfoContainer, ImageContainerAnomaly , ImageBackground} from "./anomalies-page.styles";
 
 const AnomaliesPage: React.FC = () => {
-  const [anomalies, setAnomalies] = useState<Anomaly[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
+  const dispatch = useDispatch<AppDispatch>();
+
+  const { anomalies, loading, error } = useSelector((state: RootState) => state.anomalies);
 
   useEffect(() => {
-    const fetchAnomalies = async () => {
-      try {
-        const response = await axios.get('/anomalies');
-        setAnomalies(response.data);
-      } catch (err) {
-        setError('Erreur lors de la récupération des anomalies.');
-      } finally {
-        setLoading(false);
-      }
-    };
+    dispatch(fetchAnomalies());
+  }, [dispatch]);
 
-    fetchAnomalies(); // Appel de la fonction lors du premier rendu
-  }, []);
 
-  if (loading) {
-    return <div>Chargement des anomalies...</div>;
-  }
 
   if (error) {
     return <div>{error}</div>;
   }
+
   return (
-    <div>
-      <h1>Liste des Anomalies</h1>
-      <ul>
-        {anomalies.map((anomaly) => (
-          <li key={anomaly.id}>
-            <h2>{anomaly.name}</h2>
-            <p>{anomaly.description}</p>
-            {anomaly.image && <img src={`${anomaly.image}`} alt={anomaly.name} />}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+      <Fragment>
+        <BackgroundComponent>
+          <BorderParent />
+          {anomalies.map((anomaly) => (
+                <ItemLayoutComponent key={anomaly.id} >
+                  <InfoContainer>
+                      <h2 className="info-container-h2">{anomaly.name}</h2>
+                      <p className="info-p">{anomaly.description}</p>
+                      <ImageContainerAnomaly>
+                        <ImageBackground imageUrl={anomaly.image}/>
+                      </ImageContainerAnomaly>
+                    </InfoContainer>
+                </ItemLayoutComponent>
+                ))}
+          </BackgroundComponent>
+            </Fragment>
+            );
+          };
 
 export default AnomaliesPage;

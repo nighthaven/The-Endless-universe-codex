@@ -4,7 +4,7 @@ import clsx from "clsx";
 import { ReactNode, FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import { showItem, hideItem } from "../../store/item-layout/item-layout.reducer"; // Import des actions
+import { showItem, hideItem } from "../../store/item-layout/item-layout.reducer";
 
 interface ItemLayoutProps {
   children: ReactNode;
@@ -16,7 +16,6 @@ const ItemLayoutComponent: FC<ItemLayoutProps> = ({ children, className }) => {
   const isVisible = useSelector((state: RootState) => state.item.visible); // Sélection de l'état
 
   useEffect(() => {
-    // Simule un changement de visibilité quand l'item est monté
     dispatch(showItem());
 
     return () => {
@@ -27,7 +26,7 @@ const ItemLayoutComponent: FC<ItemLayoutProps> = ({ children, className }) => {
   return (
     <motion.div
       initial={{ scale: 0 }}
-      animate={{ scale: isVisible ? 1 : 0 }}  // Animation basée sur l'état Redux
+      animate={{ scale: isVisible ? 1 : 0 }}
       transition={{ duration: 0.5 }}
       className={clsx(
         "custom-bg p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8",

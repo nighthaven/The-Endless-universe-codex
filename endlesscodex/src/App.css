@@ -15,17 +15,6 @@ body {
   box-sizing: border-box;
 }
 
-.background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  min-height: 100vh;
-  background-image: url("./img/endless-space-2.jpg");
-  background-size: cover;
-}
-
-
 @keyframes move {
   0%{
     transform: translate(0,0);
