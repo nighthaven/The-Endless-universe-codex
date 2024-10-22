@@ -1,4 +1,4 @@
-import "./about.scss"
+import "./about.styles.scss"
 import FireflyComponent from "../../component/firefly/fireflyComponent";
 import NavbarComponent from "../navbar/navbar.component";
 import AboutContentComponent from "../../component/about-content/about-content.component";

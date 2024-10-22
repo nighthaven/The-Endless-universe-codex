@@ -1,6 +1,6 @@
 import os
 
-IMAGE_BASE_PATH = os.path.join("public", "static", "image")
+IMAGE_BASE_PATH = os.path.join("public", "static", "images")
 
 
 class LinkService:
