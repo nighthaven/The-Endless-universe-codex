@@ -1,15 +1,15 @@
 import "./about.styles.scss"
-import FireflyComponent from "../../component/firefly/fireflyComponent";
-import NavbarComponent from "../navbar/navbar.component";
 import AboutContentComponent from "../../component/about-content/about-content.component";
+import BackgroundComponent from "../../component/background/background.component";
+import {Fragment} from "react";
 
 const AboutComponent = () => {
     return (
-        <div className="background">
-            <FireflyComponent/>
-            <NavbarComponent/>
-            <AboutContentComponent></AboutContentComponent>
-        </div>
+        <Fragment>
+            <BackgroundComponent>
+                <AboutContentComponent/>
+            </BackgroundComponent>
+        </Fragment>
     )
 }
 
