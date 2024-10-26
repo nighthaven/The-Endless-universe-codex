@@ -1,13 +1,25 @@
-from sqlalchemy import Boolean, Column, ForeignKey, Integer, String
-from sqlalchemy.orm import Relationship
+from sqlalchemy import ARRAY, Boolean, Column, ForeignKey, Integer, String, Text
+from sqlalchemy.orm import relationship
 from src.models import Base
+from src.models.factions_models import Faction
 
 
 class FactionDescription(Base):
     __tablename__ = "factions_descriptions"
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     faction_id = Column(Integer, ForeignKey("factions.id"), nullable=False)
-    faction = Relationship("Faction")  # type: ignore[misc]
+    faction = relationship(Faction)  # type: ignore[misc]
     media_id = Column(Integer, ForeignKey("media.id"), nullable=False)
-    media = Relationship("Media")  # type: ignore[misc]
-    size = Column(Boolean, nullable=False, server_default="False")
+    media = relationship("Media")  # type: ignore[misc]
+    description = Column(Text, nullable=False)
+    image_url = Column(String, nullable=False)
+    government = Column(String, nullable=True)
+    ideology = Column(String, nullable=True)
+    home_planet = Column(String, nullable=True)
+    affinity = Column(ARRAY(String), nullable=True)
+    populations = Column(ARRAY(String), nullable=True)
+    traits = Column(ARRAY(String), nullable=True)
+    starting_technology = Column(ARRAY(String), nullable=True)
+    units = Column(ARRAY(String), nullable=True)
+    heroes = Column(ARRAY(String), nullable=True)
+    major = Column(Boolean, nullable=False, default=True)

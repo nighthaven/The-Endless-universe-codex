@@ -24,7 +24,9 @@ with open(json_file_path, "r") as file:
 
 
 def delete_all_wonders(db: Session):
-    seq_name = db.execute(text("SELECT pg_get_serial_sequence('media', 'id')")).scalar()
+    seq_name = db.execute(
+        text("SELECT pg_get_serial_sequence('wonder', 'id')")
+    ).scalar()
     db.query(Wonder).delete()
     db.execute(text(f"ALTER SEQUENCE {seq_name} RESTART WITH 1"))
     db.commit()
