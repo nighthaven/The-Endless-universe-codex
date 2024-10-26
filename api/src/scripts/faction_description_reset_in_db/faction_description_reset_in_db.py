@@ -37,7 +37,7 @@ def import_all_faction_descriptions(db: Annotated[Session, Depends(get_db)]):
     faction_informations_to_insert = []
     for description in faction_descriptions_data:
         media_id = description["media_id"]
-        media_name = media_dict.get(media_id).name # type: ignore[union-attr]
+        media_name = media_dict.get(media_id).name  # type: ignore[union-attr]
         if media_name == "ENDLESS_SPACE":
             image = "ES1"
         if media_name == "ENDLESS_LEGEND":

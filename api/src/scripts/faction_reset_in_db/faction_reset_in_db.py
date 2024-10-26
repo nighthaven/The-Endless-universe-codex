@@ -19,7 +19,7 @@ with open(json_file_path, "r") as file:
     factions_data = json.load(file)
 
 
-def delete_all_faction(db: Session):
+def delete_factions(db: Session):
     seq_name = db.execute(
         text("SELECT pg_get_serial_sequence('factions', 'id')")
     ).scalar()
@@ -28,7 +28,7 @@ def delete_all_faction(db: Session):
     db.commit()
 
 
-def import_all_factions(db: Annotated[Session, Depends(get_db)]):
+def import_factions(db: Annotated[Session, Depends(get_db)]):
     faction_to_insert = []
     for faction_data in factions_data:
         faction_to_insert.append(
@@ -44,7 +44,7 @@ def import_all_factions(db: Annotated[Session, Depends(get_db)]):
 if __name__ == "__main__":
     db = SessionLocal()
     try:
-        delete_all_faction(db)
-        import_all_factions(db)
+        delete_factions(db)
+        import_factions(db)
     finally:
         db.close()

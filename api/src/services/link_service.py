@@ -15,5 +15,5 @@ class LinkService:
             IMAGE_BASE_PATH,
             media_name,
             "faction_description",
-            f"faction-{image}-{id}.txt",
+            f"faction-{image}-{id}.png",
         )
