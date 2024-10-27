@@ -5,7 +5,7 @@ from tests.fixtures.media_factory import MediaFactory
 from tests.fixtures.wonder_factory import WonderFactory
 
 IMAGE_BASE_PATH = os.path.join(
-    "public", "static", "image", "ENDLESS_SPACE_2", "wonders"
+    "public", "static", "images", "ENDLESS_SPACE_2", "wonders"
 )
 
 

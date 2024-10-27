@@ -12,7 +12,7 @@ class TestLinkService:
         )
         assert (
             response
-            == "public/static/image/ENDLESS_SPACE_2/anomalies/super-fichier-image.png"
+            == "public/static/images/ENDLESS_SPACE_2/anomalies/super-fichier-image.png"
         )
 
     def test_get_image_wonders_link(self, client, db_session):
@@ -24,5 +24,5 @@ class TestLinkService:
         )
         assert (
             response
-            == "public/static/image/ENDLESS_SPACE_2/wonders/super-fichier-image.png"
+            == "public/static/images/ENDLESS_SPACE_2/wonders/super-fichier-image.png"
         )

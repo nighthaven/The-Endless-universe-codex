@@ -7,6 +7,7 @@ from src.routes.auth_route import router as login_router
 from src.routes.media_routes import router as media_router
 from src.routes.users_routes import router as user_router
 from src.routes.wonders_routes import router as wonders_router
+from src.routes.factions_routes import router as factions_router
 from src.utils.Oauth2 import get_current_user
 
 app = FastAPI()
@@ -16,6 +17,8 @@ app.include_router(login_router)
 app.include_router(media_router)
 app.include_router(anomalies_router)
 app.include_router(wonders_router)
+app.include_router(factions_router)
+
 
 # test_model.Base.metadata.create_all(engine)
 

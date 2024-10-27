@@ -13,6 +13,8 @@ from tests.fixtures.anomalies_factory import AnomalyFactory
 from tests.fixtures.media_factory import MediaFactory
 from tests.fixtures.users_factory import UserFactory
 from tests.fixtures.wonder_factory import WonderFactory
+from tests.fixtures.factions_factory import FactionFactory
+from tests.fixtures.faction_description_factory import FactionDescriptionFactory
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('DATABASE_USERNAME')}:{os.getenv('DATABASE_PASSWORD')}@{os.getenv('DATABASE_HOSTNAME')}:{os.getenv('DATABASE_PORT')}/{os.getenv('DATABASE_NAME')}"
 
@@ -38,6 +40,8 @@ def add_factories(db_session):
     MediaFactory._meta.sqlalchemy_session = db_session
     AnomalyFactory._meta.sqlalchemy_session = db_session
     WonderFactory._meta.sqlalchemy_session = db_session
+    FactionFactory._meta.sqlalchemy_session = db_session
+    FactionDescriptionFactory._meta.sqlalchemy_session = db_session
 
 
 @pytest.fixture

@@ -5,7 +5,7 @@ from tests.fixtures.anomalies_factory import AnomalyFactory
 from tests.fixtures.media_factory import MediaFactory
 
 IMAGE_BASE_PATH = os.path.join(
-    "public", "static", "image", "ENDLESS_SPACE_2", "anomalies"
+    "public", "static", "images", "ENDLESS_SPACE_2", "anomalies"
 )
 
 
