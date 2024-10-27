@@ -1,8 +1,7 @@
-from sqlalchemy.orm import joinedload
 from typing import Annotated, Optional
 
 from fastapi import Depends
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Session, joinedload
 from src.enums.media_name import MediaName
 from src.models import get_db
 from src.models.faction_description_model import FactionDescription
@@ -20,13 +19,14 @@ class FactionDescriptionRepository:
         faction_name: Optional[str] = None,
     ):
         faction_description_query = self.db.query(FactionDescription).options(
-            joinedload(FactionDescription.faction),
-            joinedload(FactionDescription.media)
+            joinedload(FactionDescription.faction), joinedload(FactionDescription.media)
         )
         if faction_name:
             faction_description_query = faction_description_query.join(Faction).filter(
                 Faction.name.ilike(f"%{faction_name}%")
             )
         if media:
-            faction_description_query = faction_description_query.join(Media).filter(Media.name == media)
+            faction_description_query = faction_description_query.join(Media).filter(
+                Media.name == media
+            )
         return faction_description_query.all()

@@ -4,10 +4,10 @@ from fastapi.staticfiles import StaticFiles
 from src.models.users_models import User
 from src.routes.anomalies_routes import router as anomalies_router
 from src.routes.auth_route import router as login_router
+from src.routes.factions_routes import router as factions_router
 from src.routes.media_routes import router as media_router
 from src.routes.users_routes import router as user_router
 from src.routes.wonders_routes import router as wonders_router
-from src.routes.factions_routes import router as factions_router
 from src.utils.Oauth2 import get_current_user
 
 app = FastAPI()

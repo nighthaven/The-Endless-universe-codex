@@ -1,5 +1,4 @@
 import factory
-
 from src.models.faction_description_model import FactionDescription
 from tests.fixtures.factions_factory import FactionFactory
 from tests.fixtures.media_factory import MediaFactory
@@ -27,4 +26,3 @@ class FactionDescriptionFactory(factory.alchemy.SQLAlchemyModelFactory):
     units = factory.List(["unit1", "unit2", "unit3"])
     heroes = factory.List(["hero1", "hero2", "hero3"])
     major = factory.Faker("boolean")
-

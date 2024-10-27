@@ -1,6 +1,6 @@
 from src.enums.media_name import MediaName
-from tests.fixtures.faction_description_factory import FactionDescriptionFactory
 from src.repositories.faction_repository import FactionDescriptionRepository
+from tests.fixtures.faction_description_factory import FactionDescriptionFactory
 from tests.fixtures.factions_factory import FactionFactory
 from tests.fixtures.media_factory import MediaFactory
 
@@ -33,7 +33,6 @@ class TestGetFactionDescription:
         response = faction_repository.find_by(media=MediaName.ENDLESS_LEGEND)
         assert len(response) == 1
         assert response[0].media.name == media.name
-
 
     def test_get_faction_description_specific_faction(self, client, db_session):
         fac = FactionFactory(name="Amplitude")

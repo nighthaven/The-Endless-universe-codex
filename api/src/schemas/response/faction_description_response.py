@@ -1,7 +1,7 @@
-from pydantic import ConfigDict
-from src.schemas.base.faction_base import FactionDescriptionBase
 from typing import List
 
+from pydantic import ConfigDict
+from src.schemas.base.faction_base import FactionDescriptionBase
 
 
 class FactionDescriptionResponse(FactionDescriptionBase):

@@ -10,11 +10,11 @@ from src.main import app
 from src.models import get_db
 from src.utils.Oauth2 import create_access_token
 from tests.fixtures.anomalies_factory import AnomalyFactory
+from tests.fixtures.faction_description_factory import FactionDescriptionFactory
+from tests.fixtures.factions_factory import FactionFactory
 from tests.fixtures.media_factory import MediaFactory
 from tests.fixtures.users_factory import UserFactory
 from tests.fixtures.wonder_factory import WonderFactory
-from tests.fixtures.factions_factory import FactionFactory
-from tests.fixtures.faction_description_factory import FactionDescriptionFactory
 
 SQLALCHEMY_DATABASE_URL = f"postgresql://{os.getenv('DATABASE_USERNAME')}:{os.getenv('DATABASE_PASSWORD')}@{os.getenv('DATABASE_HOSTNAME')}:{os.getenv('DATABASE_PORT')}/{os.getenv('DATABASE_NAME')}"
 
