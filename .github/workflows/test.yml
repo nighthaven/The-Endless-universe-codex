@@ -1,0 +1,58 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - '**'
+  pull_request:
+    branches:
+      - '**'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:17  # Utilise une version appropriée
+        env:
+          POSTGRES_USER: ${{ secrets.DATABASE_USERNAME }}
+          POSTGRES_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
+          POSTGRES_DB: ${{ secrets.DATABASE_NAME }}
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U postgres"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Vérifie le code
+        uses: actions/checkout@v2
+
+      - name: Installer Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+
+      - name: Lister les fichiers dans le dossier api
+        run: ls -la api  # Vérifiez la présence de .env.test
+
+      - name: Créer le fichier .env.test dans github sans passer les informations confidentielle
+        run: |
+          echo "DATABASE_HOSTNAME=${{ secrets.DATABASE_HOSTNAME }}" >> $GITHUB_ENV
+          echo "DATABASE_PORT=${{ secrets.DATABASE_PORT }}" >> $GITHUB_ENV
+          echo "DATABASE_USERNAME=${{ secrets.DATABASE_USERNAME }}" >> $GITHUB_ENV
+          echo "DATABASE_PASSWORD=${{ secrets.DATABASE_PASSWORD }}" >> $GITHUB_ENV
+          echo "DATABASE_NAME=${{ secrets.DATABASE_NAME }}" >> $GITHUB_ENV
+          echo "SECRET_KEY=${{ secrets.SECRET_KEY }}" >> $GITHUB_ENV
+          echo "ALGORYTHM=${{ secrets.ALGORYTHM }}" >> $GITHUB_ENV
+          echo "ACCESS_TOKEN_EXPIRE_MINUTES=${{ secrets.ACCESS_TOKEN_EXPIRE_MINUTES }}" >> $GITHUB_ENV
+
+      - name: Installer les dépendances
+        working-directory: api
+        run: python -m pip install -r requirements.txt
+
+      - name: Exécuter les tests
+        working-directory: api
+        run: pytest #
