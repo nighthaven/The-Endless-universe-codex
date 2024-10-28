@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - create_github_test_yml
   pull_request:
     branches:
       - main
