@@ -11,7 +11,7 @@ const NavbarComponent = () => {
                     <div className="logo"></div>
                 </Link>
                 <div className="links-container">
-                    <Link className="nav-links" to="/faction">Faction</Link>
+                    <Link className="nav-links" to="/factions">Faction</Link>
                 </div>
                 <div className="links-container">
                     <Link className="nav-links" to="/anomalies">Anomalies/wonders</Link>
