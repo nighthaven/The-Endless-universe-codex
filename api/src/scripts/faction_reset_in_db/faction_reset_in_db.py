@@ -10,6 +10,7 @@ from typing import Annotated
 from fastapi import Depends
 from sqlalchemy.orm import Session
 from src.models import SessionLocal, get_db
+from src.models.faction_description_model import FactionDescription
 from src.models.factions_models import Faction
 
 json_file_path = Path(__file__).parents[0] / "factions.json"
@@ -23,6 +24,7 @@ def delete_factions(db: Session):
     seq_name = db.execute(
         text("SELECT pg_get_serial_sequence('factions', 'id')")
     ).scalar()
+    db.query(FactionDescription).delete()
     db.query(Faction).delete()
     db.execute(text(f"ALTER SEQUENCE {seq_name} RESTART WITH 1"))
     db.commit()

@@ -45,7 +45,7 @@ def import_all_faction_descriptions(db: Annotated[Session, Depends(get_db)]):
         if media_name == "ENDLESS_SPACE_2":
             image = "ES2"
         image_link = link_service.get_image_faction_description_link(
-            media_name, image, media_id
+            media_name, image, description["faction_id"]
         )
         faction_informations_to_insert.append(
             FactionDescription(
