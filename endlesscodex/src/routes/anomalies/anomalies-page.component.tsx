@@ -25,7 +25,6 @@ const AnomaliesPage: React.FC = () => {
   return (
       <Fragment>
         <BackgroundComponent>
-          <BorderParent />
           {anomalies.map((anomaly) => (
                 <ItemLayoutComponent key={anomaly.id} >
                   <InfoContainer>
