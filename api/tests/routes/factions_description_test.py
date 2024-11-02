@@ -6,7 +6,7 @@ class TestGetFactionsDescriptions:
         faction_description = FactionDescriptionFactory()
         FactionDescriptionFactory()
         FactionDescriptionFactory()
-        response = client.get("/faction")
+        response = client.get("/factions")
         assert response.status_code == 200
 
         first_element_response_json = response.json()[0]
