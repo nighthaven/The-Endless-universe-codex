@@ -6,8 +6,8 @@ from src.schemas.base.faction_base import FactionResponse, MediaResponse
 from src.schemas.response.faction_description_response import FactionDescriptionResponse
 
 router = APIRouter(
-    prefix="/faction",
-    tags=["faction"],
+    prefix="/factions",
+    tags=["factions"],
 )
 
 

@@ -10,7 +10,18 @@ from src.routes.users_routes import router as user_router
 from src.routes.wonders_routes import router as wonders_router
 from src.utils.Oauth2 import get_current_user
 
-app = FastAPI()
+
+app = FastAPI(
+    title="The Endless Universe API",
+    description="An API about the univers of Endless, by Amplitude Studio",
+    version="1.0.0",
+    openapi_tags=[
+        {"name": "factions", "description": "Operations on factions"},
+        {"name": "Anomalies", "description": "Operations on anomalies"},
+        {"name": "Wonders", "description": "Operations on wonders"},
+    ],
+)
+
 
 app.include_router(user_router)
 app.include_router(login_router)
@@ -19,8 +30,6 @@ app.include_router(anomalies_router)
 app.include_router(wonders_router)
 app.include_router(factions_router)
 
-
-# test_model.Base.metadata.create_all(engine)
 
 app.add_middleware(
     CORSMiddleware,
