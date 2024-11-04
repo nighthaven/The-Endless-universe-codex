@@ -1,0 +1,28 @@
+.info-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 90%;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  padding: 1.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(253, 100, 0, 0.5);
+  backdrop-filter: blur(6px);
+  box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  margin: 20px auto;
+
+    span, h2, p {
+    pointer-events: none;
+  }
+
+    span {
+      color: #fd6400;
+      text-shadow: -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+    }
+}

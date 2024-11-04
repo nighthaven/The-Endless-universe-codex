@@ -1,15 +1,12 @@
-import { Outlet } from 'react-router-dom';
-
-import FireflyComponent from "../../component/firefly/fireflyComponent";
-import NavbarComponent from "../navbar/navbar.component";
 import BackgroundComponent from "../../component/background/background.component";
 import {Fragment} from "react";
-
+import HomeComponent from "../../component/home/home.component";
 const Home = () => {
   return (
     <Fragment>
         <BackgroundComponent>
-
+            <h1>Documentation de l'API</h1>
+            <HomeComponent />
         </BackgroundComponent>
     </Fragment>
   );
