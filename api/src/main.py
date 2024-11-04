@@ -10,7 +10,6 @@ from src.routes.users_routes import router as user_router
 from src.routes.wonders_routes import router as wonders_router
 from src.utils.Oauth2 import get_current_user
 
-
 app = FastAPI(
     title="The Endless Universe API",
     description="An API about the univers of Endless, by Amplitude Studio",
