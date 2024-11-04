@@ -27,12 +27,14 @@ interface Faction {
   major: boolean;
 }
 
+const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/factions`;
+
 const FactionListComponent: React.FC = () => {
   const [factions, setFactions] = useState<Faction[]>([]);
 
   const fetchFactions = async () => {
     try {
-      const response = await axios.get<Faction[]>('http://localhost:8000/faction');
+      const response = await axios.get<Faction[]>(apiUrl);
       setFactions(response.data);
     } catch (error) {
       alert("Une erreur est survenue lors de la récupération des données. Veuillez réessayer.");
