@@ -1,4 +1,4 @@
-import {Fragment} from "react";
+import React, { Fragment } from "react";
 import OpenApiViewer from "../openapi-viewer/openapi-viewer";
 
 import "./home.style.scss"

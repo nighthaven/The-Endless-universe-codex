@@ -1,4 +1,4 @@
-import {Fragment} from "react"
+import React, { Fragment } from "react";
 import {Outlet, Link} from "react-router-dom";
 
 import "./navbar.styles.scss"

@@ -1,5 +1,5 @@
 import BackgroundComponent from "../../component/background/background.component";
-import {Fragment} from "react";
+import React, { Fragment } from "react";
 import HomeComponent from "../../component/home/home.component";
 const Home = () => {
   return (

@@ -1,7 +1,7 @@
 import "./about.styles.scss"
 import AboutContentComponent from "../../component/about-content/about-content.component";
 import BackgroundComponent from "../../component/background/background.component";
-import {Fragment} from "react";
+import React, { Fragment } from "react";
 
 const AboutComponent = () => {
     return (

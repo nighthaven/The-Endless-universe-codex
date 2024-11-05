@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import React, { motion } from "framer-motion";
 import clsx from "clsx";
 import { ReactNode, FC, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
