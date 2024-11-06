@@ -13,7 +13,7 @@ interface ItemLayoutProps {
 
 const ItemLayoutComponent: FC<ItemLayoutProps> = ({ children, className }) => {
   const dispatch = useDispatch();
-  const isVisible = useSelector((state: RootState) => state.item.visible); // Sélection de l'état
+  const isVisible = useSelector((state: RootState) => state.item.visible);
 
   useEffect(() => {
     dispatch(showItem());
@@ -32,6 +32,7 @@ const ItemLayoutComponent: FC<ItemLayoutProps> = ({ children, className }) => {
         "custom-bg p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8",
         className
       )}
+      data-testid="item-layout"
     >
       {children}
     </motion.div>
