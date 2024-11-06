@@ -1,7 +1,7 @@
 import React from 'react';
 import './background.styles.scss'
 
-import FireflyComponent from "../firefly/fireflyComponent";
+import FireflyComponent from "../firefly/firefly.component";
 import NavbarComponent from "../../routes/navbar/navbar.component";
 import {BorderParent} from "../../routes/anomalies/anomalies-page.styles";
 

@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import './App.css';
-import "./component/firefly/fireflyComponent";
+import "./component/firefly/firefly.component";
 import Home from "./routes/home/home-page.component";
 import AboutComponent from "./routes/about/about-page.component";
 import AnomaliesPage from "./routes/anomalies/anomalies-page.component";
