@@ -1,4 +1,4 @@
-import {Fragment} from "react"
+import React, {Fragment} from "react"
 import {Outlet, Link} from "react-router-dom";
 
 import "./navbar.styles.scss"
@@ -6,7 +6,7 @@ import "./navbar.styles.scss"
 const NavbarComponent = () => {
     return (
         <Fragment>
-            <div className="navigation">
+            <div className="navigation" data-testid="navbar">
                 <Link className="logo-container" to="/">
                     <div className="logo"></div>
                 </Link>
@@ -25,4 +25,4 @@ const NavbarComponent = () => {
     )
 }
 
-export default NavbarComponent
+export default NavbarComponent;
