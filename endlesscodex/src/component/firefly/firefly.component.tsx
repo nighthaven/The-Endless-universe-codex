@@ -33,6 +33,7 @@ const FireflyComponent = () => {
                     <div
                         key={firefly.id}
                         className="firefly-background"
+                        data-testid="firefly"
                         style={{
                             top: firefly.top,
                             left: firefly.left,
