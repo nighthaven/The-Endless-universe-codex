@@ -7,7 +7,7 @@ import {BorderParent} from "../../routes/anomalies/anomalies-page.styles";
 
 const BackgroundComponent: React.FC<{ children?: React.ReactNode }> = ({ children })  => {
     return (
-        <div className="background">
+        <div className="background" data-testid="background">
             <FireflyComponent/>
             <NavbarComponent/>
             <BorderParent />
