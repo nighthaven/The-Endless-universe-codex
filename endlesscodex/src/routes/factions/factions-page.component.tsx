@@ -2,7 +2,7 @@ import React, {Fragment} from "react";
 import BackgroundComponent from "../../component/background/background.component";
 import {BorderParent} from "../anomalies/anomalies-page.styles";
 
-import FactionsComponent from "../../component/factions/factions.component";
+import FactionsComponent from "../../component/factions/factions-list.component";
 
 const FactionPageComponent = () => {
     return (
