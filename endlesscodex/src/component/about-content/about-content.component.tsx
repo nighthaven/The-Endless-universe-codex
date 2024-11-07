@@ -32,7 +32,7 @@ const AboutContentComponent = () => {
 
     return (
         <Fragment>
-            <div className="about-content" data-testid="about">
+            <div className="about-content" data-testid="about-content">
                 <ItemLayoutComponent className="About-image_layout">
                     <div className="about-image-container">
                         <img
