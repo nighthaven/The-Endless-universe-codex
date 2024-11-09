@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const BorderParent = styled.div`
-  margin-top:500px;
+  margin-top: 500px;
 `;
 
 export const ImageContainerAnomaly = styled.div`
@@ -15,9 +15,9 @@ export const ImageContainerAnomaly = styled.div`
   border: 1px solid black;
   margin: 0 20px 15px;
   overflow: hidden;
-`
+`;
 
-export const ImageBackground = styled.div<{ imageUrl: string }>`         
+export const ImageBackground = styled.div<{ imageUrl: string }>`
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -26,7 +26,7 @@ export const ImageBackground = styled.div<{ imageUrl: string }>`
 `;
 
 export const InfoContainer = styled.div`
-  display: flex; 
+  display: flex;
   align-items: center;
   justify-content: space-between;
   width: 90%;
@@ -40,25 +40,24 @@ export const InfoContainer = styled.div`
   box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   margin: 20px auto;
-    
-    h2 {
-        color: #fd6400;
-            min-width: 15%;
-            margin-right: 20px;
-    }
-    
-    p {
-        color: #FFFFFF;
-            font-size: 1.3rem;
-    }
-    
-    &:hover {
-        box-shadow: 0 4px 6px rgba(253, 100, 0, 0.3);
-        
-        ${ImageBackground} {
-            transform: scale(1.1);
-            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-    }
-    }
-`;
 
+  h2 {
+    color: #fd6400;
+    min-width: 15%;
+    margin-right: 20px;
+  }
+
+  p {
+    color: #ffffff;
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 6px rgba(253, 100, 0, 0.3);
+
+    ${ImageBackground} {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
+    }
+  }
+`;

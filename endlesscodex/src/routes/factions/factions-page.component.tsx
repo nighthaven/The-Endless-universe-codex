@@ -1,18 +1,15 @@
-import React, {Fragment} from "react";
-import BackgroundComponent from "../../component/background/background.component";
-import {BorderParent} from "../anomalies/anomalies-page.styles";
+import BackgroundComponent from '../../component/background/background.component';
+import { BorderParent } from '../anomalies/anomalies-page.styles';
 
-import FactionsComponent from "../../component/factions/factions-list.component";
+import FactionsComponent from '../../component/factions/factions-list.component';
 
-const FactionPageComponent = () => {
-    return (
-        <Fragment>
-            <BackgroundComponent>
-                <BorderParent />
-                    <FactionsComponent />
-            </BackgroundComponent>
-        </Fragment>
-    )
+function FactionPageComponent() {
+  return (
+    <BackgroundComponent>
+      <BorderParent />
+      <FactionsComponent />
+    </BackgroundComponent>
+  );
 }
 
-export default FactionPageComponent
+export default FactionPageComponent;

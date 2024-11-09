@@ -1,31 +1,30 @@
-import {render, screen} from '@testing-library/react';
-import AboutContentComponent from "./about-content.component";
+import { render, screen } from '@testing-library/react';
 import configureStore from 'redux-mock-store';
-import {Provider} from "react-redux";
-import aboutImage from "../../img/about.png";
+import { Provider } from 'react-redux';
+import AboutContentComponent from './about-content.component';
+import aboutImage from '../../img/about.png';
 
 const mockStore = configureStore();
 const store = mockStore({
-    background: {},
-    item: {},
+  background: {},
+  item: {},
 });
 
-
 test('renders about content', () => {
-    render(
-        <Provider store={store}>
-            <AboutContentComponent/>
-        </Provider>
-    )
-    const aboutContentElement = screen.getByTestId("about-content")
-    expect(aboutContentElement).toBeInTheDocument();
+  render(
+    <Provider store={store}>
+      <AboutContentComponent />
+    </Provider>
+  );
+  const aboutContentElement = screen.getByTestId('about-content');
+  expect(aboutContentElement).toBeInTheDocument();
 
-    const itemImageElements = screen.getAllByTestId("item-layout")
-    expect(itemImageElements.length).toEqual(2)
+  const itemImageElements = screen.getAllByTestId('item-layout');
+  expect(itemImageElements.length).toEqual(2);
 
-    const imageElement = screen.getByRole('img');
-    expect(imageElement).toHaveAttribute('src', aboutImage);
+  const imageElement = screen.getByRole('img');
+  expect(imageElement).toHaveAttribute('src', aboutImage);
 
-    const textElement = screen.getByText(/My name is Boris, I am a developer/i)
-    expect(textElement).toBeInTheDocument();
-})
+  const textElement = screen.getByText(/My name is Boris, I am a developer/i);
+  expect(textElement).toBeInTheDocument();
+});

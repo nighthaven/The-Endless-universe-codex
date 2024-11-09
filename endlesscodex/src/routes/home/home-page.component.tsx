@@ -1,15 +1,13 @@
-import BackgroundComponent from "../../component/background/background.component";
-import {Fragment} from "react";
-import HomeComponent from "../../component/home/home.component";
-const Home = () => {
+import BackgroundComponent from '../../component/background/background.component';
+import HomeComponent from '../../component/home/home.component';
+
+function Home() {
   return (
-    <Fragment>
-        <BackgroundComponent>
-            <h1>Documentation de l'API</h1>
-            <HomeComponent />
-        </BackgroundComponent>
-    </Fragment>
+    <BackgroundComponent>
+      <h1>Documentation de l&apos;API</h1>
+      <HomeComponent />
+    </BackgroundComponent>
   );
-};
+}
 
 export default Home;

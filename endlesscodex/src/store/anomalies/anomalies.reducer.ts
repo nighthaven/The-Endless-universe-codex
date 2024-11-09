@@ -1,11 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-
-export const fetchAnomalies = createAsyncThunk('anomalies/fetchAnomalies', async () => {
-  const response = await axios.get('/anomalies');
-  return response.data;
-});
+export const fetchAnomalies = createAsyncThunk(
+  'anomalies/fetchAnomalies',
+  async () => {
+    const response = await axios.get('/anomalies');
+    return response.data;
+  }
+);
 
 interface Anomaly {
   id: number;
@@ -32,7 +34,7 @@ const anomaliesReducer = createSlice({
         state.anomalies = action.payload;
         state.loading = false;
       })
-      .addCase(fetchAnomalies.rejected, (state, action) => {
+      .addCase(fetchAnomalies.rejected, (state) => {
         state.loading = false;
         state.error = 'Erreur lors de la récupération des anomalies.';
       });

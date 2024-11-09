@@ -1,3 +1,5 @@
 import { RootState } from '../store';
 
-export const selectFireflies = (state: RootState) => state.background.fireflies;
+const selectFireflies = (state: RootState) => state.background.fireflies;
+
+export default selectFireflies;

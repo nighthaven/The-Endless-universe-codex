@@ -1,16 +1,13 @@
-import "./about.styles.scss"
-import AboutContentComponent from "../../component/about-content/about-content.component";
-import BackgroundComponent from "../../component/background/background.component";
-import {Fragment} from "react";
+import './about.styles.scss';
+import AboutContentComponent from '../../component/about-content/about-content.component';
+import BackgroundComponent from '../../component/background/background.component';
 
-const AboutComponent = () => {
-    return (
-        <Fragment>
-            <BackgroundComponent>
-                <AboutContentComponent />
-            </BackgroundComponent>
-        </Fragment>
-    )
+function AboutComponent() {
+  return (
+    <BackgroundComponent>
+      <AboutContentComponent />
+    </BackgroundComponent>
+  );
 }
 
-export default AboutComponent
+export default AboutComponent;

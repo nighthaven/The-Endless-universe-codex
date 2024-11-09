@@ -1,19 +1,23 @@
 import React from 'react';
-import './background.styles.scss'
+import './background.styles.scss';
 
-import FireflyComponent from "../firefly/firefly.component";
-import NavbarComponent from "../../routes/navbar/navbar.component";
-import {BorderParent} from "../../routes/anomalies/anomalies-page.styles";
+import FireflyComponent from '../firefly/firefly.component';
+import NavbarComponent from '../../routes/navbar/navbar.component';
+import { BorderParent } from '../../routes/anomalies/anomalies-page.styles';
 
-const BackgroundComponent: React.FC<{ children?: React.ReactNode }> = ({ children })  => {
-    return (
-        <div className="background" data-testid="background">
-            <FireflyComponent/>
-            <NavbarComponent/>
-            <BorderParent />
-            <div className="content">{children}</div>
-        </div>
-    )
+function BackgroundComponent({ children }: { children?: React.ReactNode }) {
+  return (
+    <div className="background" data-testid="background">
+      <FireflyComponent />
+      <NavbarComponent />
+      <BorderParent />
+      <div className="content">{children}</div>
+    </div>
+  );
 }
 
-export default BackgroundComponent
+BackgroundComponent.defaultProps = {
+  children: null,
+};
+
+export default BackgroundComponent;
