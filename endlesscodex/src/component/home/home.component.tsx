@@ -1,16 +1,13 @@
-import {Fragment} from "react";
-import OpenApiViewer from "../openapi-viewer/openapi-viewer";
+import OpenApiViewer from '../openapi-viewer/openapi-viewer';
 
-import "./home.style.scss"
+import './home.style.scss';
 
-const HomeComponent = () => {
-    return (
-        <Fragment>
-            <div className="info-container">
-                <OpenApiViewer/>
-            </div>
-        </Fragment>
-    )
+function HomeComponent() {
+  return (
+    <div className="info-container">
+      <OpenApiViewer />
+    </div>
+  );
 }
 
-export default HomeComponent
+export default HomeComponent;

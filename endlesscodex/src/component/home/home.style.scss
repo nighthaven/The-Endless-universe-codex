@@ -14,15 +14,18 @@
   transition: box-shadow 0.3s ease;
   margin: 20px auto;
 
-    span, h2, p {
+  span,
+  h2,
+  p {
     pointer-events: none;
   }
 
-    span {
-      color: #fd6400;
-      text-shadow: -1px -1px 0 #000,
+  span {
+    color: #fd6400;
+    text-shadow:
+      -1px -1px 0 #000,
       1px -1px 0 #000,
       -1px 1px 0 #000,
       1px 1px 0 #000;
-    }
+  }
 }

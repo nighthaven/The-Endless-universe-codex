@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Title = styled.div`
   color: #fd6400;
@@ -10,10 +10,10 @@ export const Title = styled.div`
     -1px  1px 0 #000,
      1px  1px 0 #000;
     }
-`
+`;
 
 export const ImageContainerFaction = styled.div`
-     width: 400px;
+  width: 400px;
   height: 200px;
   flex: 1 1 auto;
   display: flex;
@@ -22,9 +22,9 @@ export const ImageContainerFaction = styled.div`
   border: 1px solid black;
   margin: 20px 0px 15px;
   overflow: hidden;
-    `
+`;
 
-export const ImageBackground = styled.div<{ imageUrl: string }>`         
+export const ImageBackground = styled.div<{ imageUrl: string }>`
   width: 100%;
   height: 100%;
   background-size: cover;
@@ -33,7 +33,7 @@ export const ImageBackground = styled.div<{ imageUrl: string }>`
 `;
 
 export const InfoContainer = styled.div`
-  display: flex; 
+  display: flex;
   align-items: flex-start;
   justify-content: space-between;
   width: 90%;
@@ -47,44 +47,46 @@ export const InfoContainer = styled.div`
   box-shadow: inset 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: box-shadow 0.3s ease;
   margin: 20px auto;
-    
-    span, h2, p {
+
+  span,
+  h2,
+  p {
     pointer-events: none; /* Évite les surlignements ou changements */
   }
-    
-    span{
-        color: #fd6400;
-        text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
+
+  span {
+    color: #fd6400;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  h2 {
+    color: #fd6400;
+    min-width: 15%;
+    margin-bottom: 10px;
+    text-shadow:
+      -1px -1px 0 #000,
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+      1px 1px 0 #000;
+  }
+
+  p {
+    color: #ffffff;
+    font-size: 1.3rem;
+  }
+
+  &:hover {
+    box-shadow: 0 4px 6px rgba(253, 100, 0, 0.3);
+
+    ${ImageBackground} {
+      transform: scale(1.1);
+      transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
     }
-    
-    h2 {
-        color: #fd6400;
-        min-width: 15%;
-        margin-bottom: 10px;
-                text-shadow:
-    -1px -1px 0 #000,  
-     1px -1px 0 #000,
-    -1px  1px 0 #000,
-     1px  1px 0 #000;
-    }
-    
-    p {
-        color: #FFFFFF;
-            font-size: 1.3rem;
-    }
-    
-    &:hover {
-        box-shadow: 0 4px 6px rgba(253, 100, 0, 0.3);
-        
-        ${ImageBackground} {
-            transform: scale(1.1);
-            transition: transform 6s cubic-bezier(0.25, 0.45, 0.45, 0.95);
-    }
-    }
+  }
 `;
 
 export const InfoText = styled.div`
@@ -92,16 +94,15 @@ export const InfoText = styled.div`
 `;
 
 export const RightInformation = styled.div`
-    display: flex;
+  display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
   margin-left: 20px;
 
   p {
-    color: #FFFFFF;
+    color: #ffffff;
     font-size: 1.3rem;
     text-align: right;
   }
-`
-
+`;
