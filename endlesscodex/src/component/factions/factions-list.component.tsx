@@ -3,7 +3,7 @@ import axios from 'axios';
 
 import ItemLayoutComponent from "../itemlayout/item-layout.component";
 
-import {Title, InfoContainer, ImageContainerFaction, InfoText, RightInformation, ImageBackground} from "./factions.styles"
+import {Title, InfoContainer, ImageContainerFaction, InfoText, RightInformation, ImageBackground} from "./factions-list.styles"
 
 interface Faction {
   id: number;
@@ -54,7 +54,7 @@ const FactionListComponent: React.FC = () => {
           <ItemLayoutComponent key={faction.id}>
             <InfoContainer>
               <InfoText>
-                <h2>{faction.faction.name}</h2>
+                <h2 data-testid="faction">{faction.faction.name}</h2>
                 <p><span>Description:</span> {faction.description}</p>
                 <br/>
                 <br/>
@@ -73,7 +73,7 @@ const FactionListComponent: React.FC = () => {
                 {faction.government && (<p><span>Gouvernement:</span> {faction.government}</p>)}
                 {faction.ideology && (<p><span>Ideology:</span> {faction.ideology}</p>)}
                 {faction.home_planet && (<p><span>Home planet:</span> {faction.home_planet}</p>)}
-                {faction.populations.length > 0 && (<p><span>Populations:</span> {faction.populations}</p>)}
+                {faction.populations.length > 0 && (<p><span>Populations:</span> {faction.populations?.join(', ')}</p>)}
               </RightInformation>
             </InfoContainer>
           </ItemLayoutComponent>
