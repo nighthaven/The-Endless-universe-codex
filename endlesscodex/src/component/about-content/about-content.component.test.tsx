@@ -17,7 +17,7 @@ test('renders about content', () => {
             <AboutContentComponent/>
         </Provider>
     )
-    const aboutContentElement = screen.getByTestId("about")
+    const aboutContentElement = screen.getByTestId("about-content")
     expect(aboutContentElement).toBeInTheDocument();
 
     const itemImageElements = screen.getAllByTestId("item-layout")

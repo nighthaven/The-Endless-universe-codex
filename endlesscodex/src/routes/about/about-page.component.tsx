@@ -7,7 +7,7 @@ const AboutComponent = () => {
     return (
         <Fragment>
             <BackgroundComponent>
-                <AboutContentComponent/>
+                <AboutContentComponent />
             </BackgroundComponent>
         </Fragment>
     )
