@@ -1,0 +1,50 @@
+name: CI Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'
+
+      # Supprimer l'ancienne version de Yarn
+      - name: Remove old Yarn version
+        run: sudo npm uninstall -g yarn
+
+      # Installer Yarn 4 (Berry) via Corepack
+      - name: Install Yarn 4 (Berry)
+        run: corepack enable && corepack prepare yarn@4.5.1 --activate
+
+      # Vérifier la version de Yarn installée
+      - name: Check Yarn version
+        run: yarn --version
+
+      # Vérifier que package.json et yarn.lock existent
+      - name: Check for package.json and yarn.lock
+        run: ls -la
+
+      # Si vous avez un dossier frontend ou api, déplacez-vous dans ce répertoire
+      - name: Change directory to frontend
+        run: cd endlesscodex  # Si vous avez un sous-dossier "frontend"
+
+      # Exécuter yarn install dans le bon répertoire
+      - name: Yarn install
+        run: yarn install
+
+      - name: Run tests
+        run: yarn test
+        working-directory: endlesscodex
