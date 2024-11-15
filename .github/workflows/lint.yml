@@ -1,0 +1,29 @@
+name: CI Workflow Yarn
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Yarn install
+        run: yarn install
+        working-directory: endlesscodex
+
+      - name: Yarn lint
+        run: yarn lint
+        working-directory: endlesscodex
+
+      - name: Run tests
+        run: yarn test
+        working-directory: endlesscodex
