@@ -12,6 +12,7 @@ from sqlalchemy.orm import Session
 from src.models import SessionLocal, get_db
 from src.models.faction_description_model import FactionDescription
 from src.models.media_models import Media
+from src.models.planets_model import Planet
 from src.services.link_service import LinkService
 
 json_file_path = Path(__file__).parents[0] / "faction_description.json"
@@ -55,7 +56,7 @@ def import_all_faction_descriptions(db: Annotated[Session, Depends(get_db)]):
                 image_url=image_link,
                 government=description["government"],
                 ideology=description["ideology"],
-                home_planet=description["home_planet"],
+                home_planet_id=description["home_planet_id"],
                 affinity=description["affinity"],
                 populations=description["populations"],
                 traits=description["traits"],

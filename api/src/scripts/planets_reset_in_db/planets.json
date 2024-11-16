@@ -1,0 +1,117 @@
+[
+  {
+    "name": "Raia",
+    "type": "Terran",
+    "description": "The first Mezari starships arrived millennia ago, landing on a green, virginal--and empty--planet of breathtaking, fecund wildernesses. Today, Raia proudly shows its pioneering, frontier past as it tamed the wild lands and storm-wracked seas, its landmasses now brimming with mighty industrial swathes and vast urban powerhouses. On the oceans stand huge mining platforms, Raia's riches now the United Empire's riches. Above, half-built starship yards orbit the conquered world, as the Empire prepares to take its glorious civilization to the rest of the galaxy."
+  },
+  {
+    "name": "Hekim",
+    "type": "Boreal",
+    "description": "The Sophons evolved on Hekim, a rocky world orbiting a blue star. As their sun produced relatively high radiation, their rate of mutation and evolution was unusually rapid. Though their world is cold, numerous volcanic fissures and vents created networks of warm spots, oases, and habitable cave systems which allowed the Sophons to indulge themselves in the study of biology and geology from early in their history. With natural energy sources leaving the atmosphere clear, their eyes soon turn to the study of the stars ..."
+  },
+  {
+    "name": "Husk",
+    "type": "Jungle",
+    "description": "Built by the Virtual Endless during the Dust Wars as weapons, the Cravers successfully wiped many planets and stations clean of the Concretes. Once their usefulness was over, however, the Endless shut down the factories and abandoned the Cravers, dumping the remaining troops on Husk, a random planet, and bombing it back to the Stone Age. Grim and resolute the Cravers survived and evolved, using makeshift and stolen technology to scrabble their way back to the stars."
+  },
+  {
+    "name": "Horatio Prime",
+    "type": "Mediterranean",
+    "description": "Horatio Prime is a world that in most other factions would serve as the vacation planet. Dry, warm, breezy, and beautiful, it is clear from the extensive Endless ruins that more than one spacefaring race has selected it as a preferred destination. Its current infrastructure projects tend to vary with Horatio’s tastes; some buildings blend seamlessly with the landscape while others are garish and metallic statements of architectural extravagance."
+  },
+  {
+    "name": "Vanguard",
+    "type": "Snow",
+    "description": "Upon arrival in the galaxy, the Riftborn settled on a snow-covered world that they named Vanguard. Like the rest of the universe they find themselves in, they have little love for the planet, yet in its pristine, white snowfields they find an echo of their own universe, Coroz. Less a home, and more a staging ground for further explorations, the Riftborn inhabit a small corner of the world with order and vigor."
+  },
+  {
+    "name": "Koyasil",
+    "type": "Forest",
+    "description": "An ancient world, its origin lost to the mists of time, Koyasil's entire landmass is now one vast, primeval forest. How long ago the Unfallen rose from the gloomy, silent woodlands is uncertain, but most historians who have studied the species of the galaxy place them as one of the oldest. In the depths of the forest, a sense of timelessness reigns supreme, and it is said a fallen tree will lay undisturbed for millennia, its very fabric becoming another layer of the forest. The Unfallen strive for little, content in their ageless world, but the stirrings of younger races across the galaxy has awoken something in Koyasil... something ancient, mysterious, and powerful."
+  },
+  {
+    "name": "Tchinomy",
+    "type": "Tundra",
+    "description": "The home planet of the Vodyani was a poor yet temperate world, and the fragility of its environment meant it was soon depleted. As a result the Vodyani were driven into space by necessity, and already have a long history as a ship-bound people. Though their civilization is now tied to their Arks, their planet of origin remains a powerful symbol both as a lesson in ecology and as a memory of the weak and grotesque forms they had before Virtual technology allowed them to evolve beyond that."
+  },
+  {
+    "name": "Jenes",
+    "type": "Atoll",
+    "description": "Jenes, an atoll planet full of tropical islands and tropical storms, is the home of the Lumeris civilization and the home base of the Lumeris Families that rule it from behind the scenes. Their oceanic environment necessitated the ability to adapt to the water, yet the need to create fire and build advanced technologies drove them to the land. From there they are now challenging the heavens themselves, bringing their unique style of economic development to an unsuspecting galaxy."
+  },
+  {
+    "name": "Uchi",
+    "type": "Jungle",
+    "description": "The Hissho home planet is hot, craggy, and rocky, but full of lowland jungles. Though the highlands are arid and dry, the valleys and oceans of the planet form a dense forest habitat that teems with life--and prey. The difficult conditions have led the HIssho to be hardy and stoic, whether they are meditating in a temple carved into the side of a mountain or hunting game through dense woods.\n\nThe rough terrain lent itself to development of clan and family as the root of both social and political structure, and even now that they have their eyes set on the stars the Hissho remain tied in webs of ancient loyalties.\n\n"
+  },
+  {
+    "name": "Nexus",
+    "type": "Crescent",
+    "description": "The Umbral Choir are outsiders to the Endless galaxy, and Nexus is their hidden fortress from where they explore this new realm. As immaterial wraiths capable of infiltrating the logical foundations of machine and cybernetic systems, the Umbral Choir are masters of espionage, but, equally, are unable to colonize worlds by traditional methods. Nexus is their answer to this conundrum. A medley of constructed interlocking rings, this artificial world acts as a bridge between the material and immaterial domains, permitting the Choir to fulfil their ambitions of ending the suffering in the galaxy."
+  },
+  {
+    "name": "Sobra",
+    "type": "Desert",
+    "description": "The Nakalim have been on Sobra since their birth, and though it is heavily exploited they still view it as a gracious and civilized home. A more interesting fact is that the planet was once protected by a Lost, also called Sobra by the Nakalim, who guided and aided them over the long, slow growth of their culture. They feel the loss of their god to the weapons of the Endless keenly, and are dedicated enemies of that dead civilization. From Sobra they once built an empire that controlled much of the galaxy, and they are eager to rebuild it."
+  },
+  {
+    "name": "Auriga",
+    "type": "Ice",
+    "description": "This garden planet was used as a biological laboratory by the Concrete Endless, with myriad experiments run on both native and alien life forms. A site of major conflict during the Dust Wars, the environment degraded and the surface of the planet was eventually covered in ice. While there are rumors and expeditions that claim to have uncovered miraculous ruins and the vestiges of great empires, today Auriga is an icy tomb."
+  },
+  {
+    "name": "Bilgeli",
+    "type": "Savannah",
+    "description": "A hospitable--if dry--planet, rich in natural resources, Bilgeli served as the base for the Endless research stations that were built in its orbit. One of them in particular, Letum, has a fairly legitimate claim as being the first place in Endless history where the science of virtualization was perfected. For better or for worse, this fact has given it an important role in the mythos of the Endless civilization."
+  },
+  {
+    "name": "Chiark",
+    "type": "Terran",
+    "description": "Whoever shaped this world into its present form is lost to the sands of time, but it is clear they possessed a mastery of time and space--and games. The whole world is, in fact, the galaxy's most complex game, and players can spend whole lifetimes attempting to master its intricacies. Shrouded in thick mists from the outside, players who \"enter\" the game find themselves in something akin to a vast living simulation and must rely on all their wits and knowledge to progress. What purpose the game serves is unknown, and whether anybody has ever won is arguable, but what is certain is that the world attracts the galaxy's best minds."
+  },
+  {
+    "name": "Kyros",
+    "type": "Barren",
+    "description": "Kyros, when discovered, was a planet whose environment was so welcoming that it was taken by many pre-Dust Endless sects as their promised paradise. Unfortunately, conflict and strife exploded over its care and exploitation, and a \"grey goo\" nanobot plague was unleashed as a suicidal Doomsday weapon that destroyed the biosphere. It exists today only as a memorial and object lesson."
+  },
+  {
+    "name": "MU3R74",
+    "type": null,
+    "description": "From space the planet seems typical of many an advanced civilization's--large-scale infrastructure, dense urban/industrial areas, cultivated wildernesses--except for one anomaly: the complete absence of a comms spectrum at any wavelengths. Planetside, the truth becomes shockingly clear. MU3R74 is a ghost world, terraformed for future inhabitants who never arrived. The corroding shells of Sowers, the self-replicating robotic workers tasked with making planets habitable for the Virtual Endless, litter the world. What befell the Sowers is unclear. Machine plague? Mass suicide? Whatever it is, the outcome looks like a silent apocalypse."
+  },
+  {
+    "name": "Mezan",
+    "type": "Ash",
+    "description": "This is the planet of origin of all the humanoid bipeds in the galaxy. Successive waves of colonists departed from Mezan to find less crowded or less restricting places in the galaxy--the Mezari, the Raians, the Collective, and certainly others. Once a jewel of a planet, it has become a tragic, windswept vista of cinders and ruins. There are many theories as to what happened to Mezan, with the primary suspects being overexploitation, civil war, and invasion. It will take time and research to find out what the truth is, and what is science as opposed to rumor, legend, and propaganda.\n\nIn the meantime, Mezan awaits its next inhabitants, guarding its secrets in ash-cloaked silence."
+  },
+  {
+    "name": "Sahar",
+    "type": "Arid",
+    "description": "Though Sahar at first appears to be just another dry planet, devoid of anything other than the simplest of life forms, faint geometric patterns that beg to be investigated seem to be etched on its surface. Initial scans indicate that surface ruins do not appear to be related to these patterns. There is clearly a story here of some form of civilization, but nothing remains that can easily be documented from orbit. Only excavation and exploration might potentially reveal what may once have existed."
+  },
+  {
+    "name": "Sykagoja",
+    "type": "Monsoon",
+    "description": "This lushly forested world was once a major center of the Endless. Oddly, it was a center both of medical research and of entertainment, for it was here that the avian race called the Hissho were first modified to be more effective warriors, and then trained to provide bloodsport spectacles for bored audiences. The wealth brought by the broadcasts was rolled back into the research facilities and some to the Hissho themselves. Who knows how long this media symbiosis might have gone on, had a Virtual attack not destroyed the infrastructure and cut the Hissho free to forge their own destiny."
+  },
+  {
+    "name": "Teonha",
+    "type": "Atoll",
+    "description": "The origin planet of the strange race known as the Bhagaba, who are a distributed artificial intelligence whose calculations are done by the random movement of rocks, stones, and even grains of sand on this atoll planet. The warming and cooling of natural ocean currents coupled with tidal shifts and weather turns these elements into a living series of gates and arrays; this in turns transforms the entirety of the planet into a giant computer capable of reason and reflection. The very existence of this planet has caused heated arguments among philosophers and clerics of all stripes, as it is clearly either the work of a supreme being or the irrefutable evidence that one cannot exist.\n\n"
+  },
+  {
+    "name": "Tor",
+    "type": "Tundra",
+    "description": "The Endless society developed on this large, cool planet, orbiting a star that they called Prime. Though it is the birthplace of this culture that dominated the galaxy for centuries, they were forced to depart when over-exploitation destabilized the core and crust, triggering seismic changes. Though it is a treasure of artifacts and holds a near-mystical reputation, its history is one of sorrow."
+  },
+  {
+    "name": "Veil",
+    "type": "Terran",
+    "description": "From orbit this planet is visually uninteresting. Silent and undeveloped, it turns beneath the glare of an indifferent star. History and legend claim it is one of the great centers of Virtual study, however, and the seat of the sub-faction commonly known as the Cabal of Pure Thought. Should these tales be true, the planet would be rich with power generation centers, networks, and a planet-wide infrastructure of super-conducting cables. Until there is a way to render these visible, however, the planet merely appears as it is."
+  },
+  {
+    "name": "Harrow",
+    "type": "Destroyed",
+    "description": "Destroyed in some ancient cataclysm of unknown providence, today all that remains of the original planet is a vast archipelago of stony islands floating in the void of space. Some of these remnants are no bigger than a rock, while others span thousands of klicks, generating their own gravitational fields. All carry whispers of their past. Still held captive by the local star, with each passing millennia these islands spread a little further apart destined to one day appear to be an ordinary asteroid belt, but as long as the fabled Academy remains here, Harrow will never be considered ordinary."
+  }
+]

@@ -27,8 +27,8 @@ class TestGetFactionsDescriptions:
         )
         assert first_element_response_json["ideology"] == faction_description.ideology
         assert (
-            first_element_response_json["home_planet"]
-            == faction_description.home_planet
+            first_element_response_json["home_planet"]["name"]
+            == faction_description.home_planet.name
         )
         assert (
             first_element_response_json["populations"]

@@ -13,6 +13,7 @@ from tests.fixtures.anomalies_factory import AnomalyFactory
 from tests.fixtures.faction_description_factory import FactionDescriptionFactory
 from tests.fixtures.factions_factory import FactionFactory
 from tests.fixtures.media_factory import MediaFactory
+from tests.fixtures.planet_factory import PlanetFactory
 from tests.fixtures.users_factory import UserFactory
 from tests.fixtures.wonder_factory import WonderFactory
 
@@ -41,6 +42,7 @@ def add_factories(db_session):
     AnomalyFactory._meta.sqlalchemy_session = db_session
     WonderFactory._meta.sqlalchemy_session = db_session
     FactionFactory._meta.sqlalchemy_session = db_session
+    PlanetFactory._meta.sqlalchemy_session = db_session
     FactionDescriptionFactory._meta.sqlalchemy_session = db_session
 
 
