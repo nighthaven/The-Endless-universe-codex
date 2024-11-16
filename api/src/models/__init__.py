@@ -12,6 +12,7 @@ def install_models() -> None:
         faction_description_model,
         factions_models,
         media_models,
+        planets_model,
         users_models,
         wonders_models,
     )

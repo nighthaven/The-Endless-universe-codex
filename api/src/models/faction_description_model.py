@@ -2,6 +2,7 @@ from sqlalchemy import ARRAY, Boolean, Column, ForeignKey, Integer, String, Text
 from sqlalchemy.orm import relationship
 from src.models import Base
 from src.models.factions_models import Faction
+from src.models.planets_model import Planet
 
 
 class FactionDescription(Base):
@@ -15,7 +16,8 @@ class FactionDescription(Base):
     image_url = Column(String, nullable=False)
     government = Column(String, nullable=True)
     ideology = Column(String, nullable=True)
-    home_planet = Column(String, nullable=True)
+    home_planet_id = Column(Integer, ForeignKey("planet.id"), nullable=True)
+    home_planet = relationship(Planet)  # type: ignore[misc]
     affinity = Column(ARRAY(String), nullable=True)
     populations = Column(ARRAY(String), nullable=True)
     traits = Column(ARRAY(String), nullable=True)
