@@ -12,6 +12,13 @@ import {
   ImageBackground,
 } from './factions-list.styles';
 
+interface Planet {
+  id: number;
+  name: string;
+  type: string;
+  description: string;
+}
+
 interface Faction {
   id: number;
   faction: {
@@ -24,7 +31,7 @@ interface Faction {
   image_url: string;
   government: string;
   ideology: string;
-  home_planet: string;
+  home_planet?: Planet | null;
   affinity: string[];
   populations: string[];
   traits: string[];
@@ -109,7 +116,7 @@ function FactionListComponent() {
                 )}
                 {faction.home_planet && (
                   <p>
-                    <span>Home planet:</span> {faction.home_planet}
+                    <span>Home planet:</span> {faction.home_planet.name}
                   </p>
                 )}
                 {faction.populations.length > 0 && (
