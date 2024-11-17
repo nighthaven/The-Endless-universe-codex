@@ -3,7 +3,7 @@ import './background.styles.scss';
 
 import FireflyComponent from '../firefly/firefly.component';
 import NavbarComponent from '../../routes/navbar/navbar.component';
-import { BorderParent } from '../../routes/anomalies/anomalies-page.styles';
+import BorderParent from '../../routes/anomalies/anomalies-page.styles';
 
 function BackgroundComponent({ children }: { children?: React.ReactNode }) {
   return (
