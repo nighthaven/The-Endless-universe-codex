@@ -30,7 +30,9 @@ function AnomaliesComponent() {
       {anomalies.map((anomaly) => (
         <ItemLayoutComponent key={anomaly.id}>
           <InfoContainer>
-            <h2 className="info-container-h2">{anomaly.name}</h2>
+            <h2 className="info-container-h2" data-testid="anomalie-name">
+              {anomaly.name}
+            </h2>
             <p className="info-p">{anomaly.description}</p>
             <ImageContainerAnomaly>
               <ImageBackground imageUrl={anomaly.image} />
