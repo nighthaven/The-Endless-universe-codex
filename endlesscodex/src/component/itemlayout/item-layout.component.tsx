@@ -12,27 +12,39 @@ import {
 
 interface ItemLayoutProps {
   children: ReactNode;
-  /* eslint-disable react/require-default-props */
+  // eslint-disable-next-line react/require-default-props
   className?: string;
+  // eslint-disable-next-line react/require-default-props
+  disableAnimation?: boolean; // Nouvelle prop
 }
 
-function ItemLayoutComponent({ children, className }: ItemLayoutProps) {
+function ItemLayoutComponent({
+  children,
+  className,
+  disableAnimation,
+}: ItemLayoutProps) {
   const dispatch = useDispatch();
   const isVisible = useSelector((state: RootState) => state.item.visible);
 
   useEffect(() => {
-    dispatch(showItem());
+    if (!disableAnimation) {
+      dispatch(showItem());
+    }
 
     return () => {
-      dispatch(hideItem());
+      if (!disableAnimation) {
+        dispatch(hideItem());
+      }
     };
-  }, [dispatch]);
+  }, [dispatch, disableAnimation]);
+
+  const scaleValue = disableAnimation || isVisible ? 1 : 0;
 
   return (
     <motion.div
-      initial={{ scale: 0 }}
-      animate={{ scale: isVisible ? 1 : 0 }}
-      transition={{ duration: 0.5 }}
+      initial={{ scale: disableAnimation ? 1 : 0 }}
+      animate={{ scale: scaleValue }}
+      transition={{ duration: disableAnimation ? 0 : 0.5 }}
       className={clsx(
         'custom-bg p-6 sm:p-8 rounded-xl flex items-center justify-center space-y-8',
         className

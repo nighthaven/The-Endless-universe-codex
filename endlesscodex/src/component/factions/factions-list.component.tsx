@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 import ItemLayoutComponent from '../itemlayout/item-layout.component';
@@ -45,7 +45,10 @@ const apiUrl = `${process.env.REACT_APP_API_BASE_URL}/factions`;
 
 function FactionListComponent() {
   const [factions, setFactions] = useState<Faction[]>([]);
+  const [searchTerm, setSearchTerm] = useState<string>(''); // État pour la recherche
+  const [filteredFactions, setFilteredFactions] = useState<Faction[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [disableAnimation, setDisableAnimation] = useState<boolean>(false);
 
   const fetchFactions = async () => {
     try {
@@ -62,15 +65,44 @@ function FactionListComponent() {
     fetchFactions();
   }, []);
 
+  useEffect(() => {
+    setDisableAnimation(searchTerm.length > 0);
+
+    const filtered = factions.filter((faction) =>
+      faction.faction.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+    setFilteredFactions(filtered);
+  }, [searchTerm, factions]);
+
   return (
     <>
       <Title>
         <h1>Liste des Factions</h1>
       </Title>
+
+      <div style={{ margin: '20px 0' }}>
+        <input
+          type="text"
+          placeholder="Rechercher une faction par nom..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          style={{
+            padding: '10px',
+            width: '100%',
+            maxWidth: '400px',
+            borderRadius: '5px',
+            border: '1px solid #ccc',
+          }}
+        />
+      </div>
+
       {error && <p>{error}</p>}
-      {factions.length > 0 ? (
-        factions.map((faction) => (
-          <ItemLayoutComponent key={faction.id}>
+      {filteredFactions.length > 0 ? (
+        filteredFactions.map((faction) => (
+          <ItemLayoutComponent
+            key={faction.id}
+            disableAnimation={disableAnimation}
+          >
             <InfoContainer>
               <InfoText>
                 <h2 data-testid="faction">{faction.faction.name}</h2>
