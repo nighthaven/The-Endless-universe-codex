@@ -26,7 +26,7 @@ function AnomaliesComponent() {
   }
 
   return (
-    <>
+    <div data-testid="anomalie-content">
       {anomalies.map((anomaly) => (
         <ItemLayoutComponent key={anomaly.id}>
           <InfoContainer>
@@ -40,7 +40,7 @@ function AnomaliesComponent() {
           </InfoContainer>
         </ItemLayoutComponent>
       ))}
-    </>
+    </div>
   );
 }
 
