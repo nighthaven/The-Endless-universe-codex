@@ -6,6 +6,8 @@ from src.routes.anomalies_routes import router as anomalies_router
 from src.routes.auth_route import router as login_router
 from src.routes.factions_routes import router as factions_router
 from src.routes.media_routes import router as media_router
+from src.routes.restful.all_url_restful import router as all_url_router
+from src.routes.restful.anomalies_restful import router as anomalies_restful_router
 from src.routes.users_routes import router as user_router
 from src.routes.wonders_routes import router as wonders_router
 from src.utils.Oauth2 import get_current_user
@@ -28,6 +30,8 @@ app.include_router(media_router)
 app.include_router(anomalies_router)
 app.include_router(wonders_router)
 app.include_router(factions_router)
+app.include_router(anomalies_restful_router)
+app.include_router(all_url_router)
 
 
 app.add_middleware(
@@ -39,13 +43,3 @@ app.add_middleware(
 )
 
 app.mount("/public", StaticFiles(directory="public"), name="public")
-
-
-@app.get("/")
-def read_root():
-    return {"Hello": "World"}
-
-
-@app.get("/testauth")
-def read_testauth(current_user: User = Depends(get_current_user)):
-    return {"authentifié": "Cette route montre que l'utilisateur est bien authentifié"}

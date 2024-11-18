@@ -1,5 +1,7 @@
 import os
 
+from src.config import settings
+
 IMAGE_BASE_PATH = os.path.join("public", "static", "images")
 
 
@@ -19,3 +21,7 @@ class LinkService:
             "faction_description",
             f"faction-{image_name}-{faction_id}.png",
         )
+
+    def get_restful_link(self, link_name: str | None):
+        base_url = settings.env_base_link
+        return f"{base_url}/endless/{link_name}"

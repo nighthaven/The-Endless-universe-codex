@@ -5,7 +5,11 @@ import FireflyComponent from '../firefly/firefly.component';
 import NavbarComponent from '../../routes/navbar/navbar.component';
 import BorderParent from '../../routes/anomalies/anomalies-page.styles';
 
-function BackgroundComponent({ children }: { children?: React.ReactNode }) {
+function BackgroundComponent({
+  children = null,
+}: {
+  children?: React.ReactNode;
+}) {
   return (
     <div className="background" data-testid="background">
       <FireflyComponent />

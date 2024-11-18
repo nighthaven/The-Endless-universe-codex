@@ -41,9 +41,12 @@ def create_anomaly(
         name=anomaly_form_creation.name,
         description=anomaly_form_creation.description,
         image=image_path,
+        url="to_define",
         media_id=media.id,
     )
     new_anomaly = anomaly_repository.save(new_anomaly)
+    new_anomaly.url = link_service.get_restful_link(f"anomaly/{new_anomaly.id}")
+    new_anomaly = anomaly_repository.update(new_anomaly)
     return new_anomaly
 
 

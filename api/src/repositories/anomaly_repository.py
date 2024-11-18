@@ -1,7 +1,7 @@
 from typing import Annotated, Optional
 
 from fastapi import Depends
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import Query, Session
 from src.enums.media_name import MediaName
 from src.models import get_db
 from src.models.anomalies_models import Anomaly
@@ -12,11 +12,26 @@ class AnomalyRepository:
     def __init__(self, db: Annotated[Session, Depends(get_db)]):
         self.db = db
 
-    def save(self, anomaly: Anomaly):
+    def save(self, anomaly: Anomaly) -> Anomaly:
         self.db.add(anomaly)
         self.db.commit()
         self.db.refresh(anomaly)
         return anomaly
+
+    def update(self, anomaly: Anomaly) -> Anomaly:
+        self.db.merge(anomaly)
+        self.db.commit()
+        self.db.refresh(anomaly)
+        return anomaly
+
+    def get_all(self):
+        return self.db.query(Anomaly).order_by(Anomaly.id)
+
+    def find_by_id(
+        self,
+        anomaly_id: int,
+    ) -> Optional[Anomaly]:
+        return self.db.query(Anomaly).filter(Anomaly.id == anomaly_id).one_or_none()
 
     def find_by(
         self,
