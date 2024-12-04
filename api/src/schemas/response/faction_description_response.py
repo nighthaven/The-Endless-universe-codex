@@ -16,5 +16,6 @@ class FactionDescriptionResponse(FactionDescriptionBase):
     starting_technology: List[str]
     units: List[str]
     heroes: List[str]
+    url: Optional[str]
 
     model_config = ConfigDict(from_attributes=True)
