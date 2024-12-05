@@ -4,6 +4,7 @@ from fastapi import APIRouter, Depends
 from src.repositories.faction_repository import FactionDescriptionRepository
 from src.schemas.base.faction_base import FactionResponse, MediaResponse
 from src.schemas.response.faction_description_response import FactionDescriptionResponse
+from src.services.link_service import LinkService
 
 router = APIRouter(
     prefix="/factions",
@@ -33,6 +34,7 @@ def get_all_factions(
             units=faction_description.units,
             heroes=faction_description.heroes,
             major=faction_description.major,
+            url=LinkService().get_factions_link("router", faction_description.id),
         )
         for faction_description in list_factions
     ]

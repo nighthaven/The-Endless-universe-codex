@@ -4,6 +4,9 @@ IMAGE_BASE_PATH = os.path.join("public", "static", "images")
 
 
 class LinkService:
+    def get_factions_link(self, router: str, faction_id: str | None) -> str:
+        return f"{router} / {faction_id}"
+
     def get_image_anomalies_link(self, media_name: str, image: str):
         return os.path.join(IMAGE_BASE_PATH, media_name, "anomalies", f"{image}.png")
 
