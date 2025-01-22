@@ -1,20 +1,8 @@
-from typing import Annotated
-
-from fastapi import Depends
-from sqlalchemy.orm import Session
-from src.models import get_db
 from src.models.media_models import Media
+from src.repositories.base_repository import BaseRepository
 
 
-class MediaRepository:
-    def __init__(self, db: Annotated[Session, Depends(get_db)]):
-        self.db = db
-
-    def save(self, media: Media):
-        self.db.add(media)
-        self.db.commit()
-        self.db.refresh(media)
-        return media
+class MediaRepository(BaseRepository):
 
     def get_all(self):
         media = self.db.query(Media).all()

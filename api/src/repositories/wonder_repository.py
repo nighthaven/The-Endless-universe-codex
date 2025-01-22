@@ -1,22 +1,12 @@
-from typing import Annotated, Optional
+from typing import Optional
 
-from fastapi import Depends
-from sqlalchemy.orm import Session
 from src.enums.media_name import MediaName
-from src.models import get_db
 from src.models.media_models import Media
 from src.models.wonders_models import Wonder
+from src.repositories.base_repository import BaseRepository
 
 
-class WonderRepository:
-    def __init__(self, db: Annotated[Session, Depends(get_db)]):
-        self.db = db
-
-    def save(self, wonder: Wonder):
-        self.db.add(wonder)
-        self.db.commit()
-        self.db.refresh(wonder)
-        return wonder
+class WonderRepository(BaseRepository):
 
     def find_all(
         self,
