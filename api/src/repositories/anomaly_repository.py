@@ -1,4 +1,5 @@
 from typing import Optional
+
 from src.enums.media_name import MediaName
 from src.models.anomalies_models import Anomaly
 from src.models.media_models import Media
