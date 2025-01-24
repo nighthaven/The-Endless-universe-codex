@@ -16,6 +16,7 @@ class TestCreateAnomaly:
             "name": "anomalie anormale",
             "description": "une très étrange anomalie que voila",
             "image": "Anomalies-Endless-L-1",
+            "url": "http://127.0.0.1:8000/endless/anomaly/1",
             "media_name": media.name.value,
         }
 
@@ -26,6 +27,7 @@ class TestCreateAnomaly:
         assert response.json()["image"] == os.path.join(
             IMAGE_BASE_PATH, f"{anomaly["image"]}.png"
         )
+        assert response.json()["url"] == anomaly["url"]
         assert response.json()["media_id"] == media.id
 
     def test_create_anomaly_with_unknown_client(self, client):

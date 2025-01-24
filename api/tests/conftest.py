@@ -50,8 +50,10 @@ def add_factories(db_session):
 def db_session():
     """Fixture qui crée une session de base de données pour les tests."""
     session = TestingSessionLocal()
-    yield session
-    session.close()
+    try:
+        yield session
+    finally:
+        session.close()
 
 
 @pytest.fixture

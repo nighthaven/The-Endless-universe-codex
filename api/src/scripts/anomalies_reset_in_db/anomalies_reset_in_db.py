@@ -1,3 +1,4 @@
+import os
 import sys
 from pathlib import Path
 
@@ -39,7 +40,7 @@ def import_all_anomalies(db: Annotated[Session, Depends(get_db)]):
     link_service = LinkService()
 
     anomalies_to_insert = []
-    for anomaly_data in anomalies_data:
+    for i, anomaly_data in enumerate(anomalies_data, start=1):
         media_name = anomaly_data["media_name"]
         media_name_object = get_enum_key_by_value(MediaName, media_name)  # type: ignore[no-untyped-call]
         media_id = media_dict.get(media_name)
@@ -52,6 +53,7 @@ def import_all_anomalies(db: Annotated[Session, Depends(get_db)]):
                         media_name_object, anomaly_data["image"]
                     ),
                     media_id=media_id,
+                    url=f"/endless/anomaly/{i}",
                 )
             )
     if anomalies_to_insert:

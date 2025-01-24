@@ -14,4 +14,5 @@ class AnomalyFactory(factory.alchemy.SQLAlchemyModelFactory):
     image = factory.LazyAttribute(
         lambda _: f"http://example.com/images/{_.name.replace(' ', '_')}.png"
     )
+    url = factory.Sequence(lambda n: f"http://example.com/endless/anomaly/{n}")
     media_id = factory.LazyAttribute(lambda obj: MediaFactory().id)

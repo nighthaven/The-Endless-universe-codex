@@ -25,6 +25,7 @@ class Settings(BaseSettings):
     secret_key: str
     algorythm: str
     access_token_expire_minutes: int
+    env_base_link: str
 
     model_config = SettingsConfigDict(env_file=env_path, env_file_encoding="utf-8")
 
