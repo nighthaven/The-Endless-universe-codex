@@ -1,4 +1,4 @@
-from typing import Annotated
+from typing import Annotated, Type
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
@@ -16,7 +16,7 @@ class MediaRepository:
         self.db.refresh(media)
         return media
 
-    def get_all(self):
+    def get_all(self) -> list[Media]:
         media = self.db.query(Media).all()
         return media
 
