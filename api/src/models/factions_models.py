@@ -6,3 +6,4 @@ class Faction(Base):
     __tablename__ = "factions"
     id = Column(Integer, primary_key=True, autoincrement=True, nullable=False)
     name = Column(String, nullable=False)
+    url = Column(String, nullable=False)

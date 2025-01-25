@@ -9,3 +9,4 @@ class FactionFactory(factory.alchemy.SQLAlchemyModelFactory):
         sqlalchemy_session_persistence = "commit"
 
     name = factory.Sequence(lambda n: f"Faction {n}")
+    url = factory.Sequence(lambda n: f"http://example.com/endless/factions/{n}")

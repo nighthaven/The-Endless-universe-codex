@@ -4,6 +4,10 @@ class TestAllLinkRestful:
         assert response.status_code == 200
         assert response.json().get("medias") == "http://127.0.0.1:8000/endless/medias"
         assert (
+            response.json().get("factions") == "http://127.0.0.1:8000/endless/factions"
+        )
+        assert response.json().get("planets") == "http://127.0.0.1:8000/endless/planets"
+        assert (
             response.json().get("anomalies")
             == "http://127.0.0.1:8000/endless/anomalies"
         )

@@ -1,32 +1,26 @@
 from typing import Annotated, Optional
 
 from fastapi import Depends
-from sqlalchemy.orm import Session, joinedload
-from src.enums.media_name import MediaName
+from sqlalchemy.orm import Session
 from src.models import get_db
-from src.models.faction_description_model import FactionDescription
 from src.models.factions_models import Faction
-from src.models.media_models import Media
 
 
-class FactionDescriptionRepository:
+class FactionRepository:
     def __init__(self, db: Annotated[Session, Depends(get_db)]):
         self.db = db
 
-    def find_by(
+    def save(self, faction: Faction) -> Faction:
+        self.db.add(faction)
+        self.db.commit()
+        self.db.refresh(faction)
+        return faction
+
+    def get_all(self):
+        return self.db.query(Faction).order_by(Faction.id)
+
+    def find_by_id(
         self,
-        media: Optional[MediaName] = None,
-        faction_name: Optional[str] = None,
-    ):
-        faction_description_query = self.db.query(FactionDescription).options(
-            joinedload(FactionDescription.faction), joinedload(FactionDescription.media)
-        )
-        if faction_name:
-            faction_description_query = faction_description_query.join(Faction).filter(
-                Faction.name.ilike(f"%{faction_name}%")
-            )
-        if media:
-            faction_description_query = faction_description_query.join(Media).filter(
-                Media.name == media
-            )
-        return faction_description_query.all()
+        faction_id: int,
+    ) -> Optional[Faction]:
+        return self.db.query(Faction).filter(Faction.id == faction_id).one_or_none()

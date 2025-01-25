@@ -1,7 +1,7 @@
 from typing import Annotated, Any, List
 
 from fastapi import APIRouter, Depends
-from src.repositories.faction_repository import FactionDescriptionRepository
+from src.repositories.faction_description_repository import FactionDescriptionRepository
 from src.schemas.base.faction_base import FactionResponse, MediaResponse
 from src.schemas.response.faction_description_response import FactionDescriptionResponse
 
