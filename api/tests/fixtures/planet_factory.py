@@ -11,3 +11,4 @@ class PlanetFactory(factory.alchemy.SQLAlchemyModelFactory):
     name = factory.Sequence(lambda n: f"Planet {n}")
     type = factory.Sequence(lambda n: f"Planet type {n}")
     description = factory.Faker("text")
+    url = factory.Sequence(lambda n: f"http://example.com/endless/planets/{n}")
