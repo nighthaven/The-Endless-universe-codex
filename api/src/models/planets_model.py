@@ -8,3 +8,4 @@ class Planet(Base):
     name = Column(String, nullable=False, unique=True)
     type = Column(String, nullable=True)
     description = Column(Text, nullable=False)
+    url = Column(String, nullable=False)

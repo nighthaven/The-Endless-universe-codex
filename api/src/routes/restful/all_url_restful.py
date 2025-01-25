@@ -14,4 +14,5 @@ def get_all_url():
         "medias": link_service.get_restful_link("medias"),
         "anomalies": link_service.get_restful_link("anomalies"),
         "wonders": LinkService().get_restful_link("wonders"),
+        "planets": LinkService().get_restful_link("planets"),
     }

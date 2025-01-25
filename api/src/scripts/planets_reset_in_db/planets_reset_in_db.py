@@ -9,6 +9,7 @@ from typing import Annotated
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
+from src.config import settings
 from src.models import SessionLocal, get_db
 from src.models.planets_model import Planet
 
@@ -30,12 +31,13 @@ def delete_planets(db: Session):
 
 def import_planets(db: Annotated[Session, Depends(get_db)]):
     planets_to_insert = []
-    for planet_data in planets_data:
+    for i, planet_data in enumerate(planets_data, start=1):
         planets_to_insert.append(
             Planet(
                 name=planet_data["name"],
                 type=planet_data["type"],
                 description=planet_data["description"],
+                url=f"{settings.env_base_link}/endless/planets/{i}",
             )
         )
     if planets_to_insert:
