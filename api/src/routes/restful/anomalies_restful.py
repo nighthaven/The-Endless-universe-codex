@@ -1,5 +1,3 @@
-from typing import Dict
-
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Query
 from src.models.anomalies_models import Anomaly

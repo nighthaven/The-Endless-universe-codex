@@ -9,6 +9,7 @@ class Wonder(Base):
     name = Column(String, nullable=False)
     description = Column(String, nullable=False)
     image = Column(String, nullable=False)
+    url = Column(String, nullable=False)
 
     media_id = Column(Integer, ForeignKey("media.id"), nullable=False)
     media = relationship("Media", backref="wonders")  # type: ignore[misc]

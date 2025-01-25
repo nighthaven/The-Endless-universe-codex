@@ -10,6 +10,7 @@ from typing import Annotated
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
+from src.config import settings
 from src.enums.media_name import MediaName
 from src.models import SessionLocal, get_db
 from src.models.anomalies_models import Anomaly
@@ -53,7 +54,7 @@ def import_all_anomalies(db: Annotated[Session, Depends(get_db)]):
                         media_name_object, anomaly_data["image"]
                     ),
                     media_id=media_id,
-                    url=f"/endless/anomaly/{i}",
+                    url=f"{settings.env_base_link}/endless/anomaly/{i}",
                 )
             )
     if anomalies_to_insert:

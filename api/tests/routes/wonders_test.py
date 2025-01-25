@@ -16,6 +16,7 @@ class TestCreateWonder:
             "name": "merveille sublime",
             "description": "une sublime merveille que voila",
             "image": "Wonder-Endless-L-1",
+            "url": "http://127.0.0.1:8000/endless/wonder/1",
             "media_name": media.name.value,
         }
 
@@ -26,6 +27,7 @@ class TestCreateWonder:
         assert response.json()["image"] == os.path.join(
             IMAGE_BASE_PATH, f"{wonder["image"]}.png"
         )
+        assert response.json()["url"] == wonder["url"]
         assert response.json()["media_id"] == media.id
 
     def test_create_wonder_with_unknown_client(self, client):

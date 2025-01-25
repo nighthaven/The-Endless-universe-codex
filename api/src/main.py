@@ -1,16 +1,15 @@
-from fastapi import Depends, FastAPI
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from src.models.users_models import User
 from src.routes.anomalies_routes import router as anomalies_router
 from src.routes.auth_route import router as login_router
 from src.routes.factions_routes import router as factions_router
 from src.routes.media_routes import router as media_router
 from src.routes.restful.all_url_restful import router as all_url_router
 from src.routes.restful.anomalies_restful import router as anomalies_restful_router
+from src.routes.restful.wonders_restful import router as wonders_restful_router
 from src.routes.users_routes import router as user_router
 from src.routes.wonders_routes import router as wonders_router
-from src.utils.Oauth2 import get_current_user
 
 app = FastAPI(
     title="The Endless Universe API",
@@ -32,6 +31,7 @@ app.include_router(wonders_router)
 app.include_router(factions_router)
 app.include_router(anomalies_restful_router)
 app.include_router(all_url_router)
+app.include_router(wonders_restful_router)
 
 
 app.add_middleware(
