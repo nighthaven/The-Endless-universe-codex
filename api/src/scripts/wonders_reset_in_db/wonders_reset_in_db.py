@@ -9,6 +9,7 @@ from typing import Annotated
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
+from src.config import settings
 from src.enums.media_name import MediaName
 from src.models import SessionLocal, get_db
 from src.models.media_models import Media
@@ -39,7 +40,7 @@ def import_all_wonders(db: Annotated[Session, Depends(get_db)]):
     link_service = LinkService()
 
     wonders_to_insert = []
-    for wonder_data in wonders_data:
+    for i, wonder_data in enumerate(wonders_data, start=1):
         media_name = wonder_data["media_name"]
         media_name_object = get_enum_key_by_value(MediaName, media_name)  # type: ignore[no-untyped-call]
         media_id = media_dict.get(media_name)
@@ -52,6 +53,7 @@ def import_all_wonders(db: Annotated[Session, Depends(get_db)]):
                         media_name_object, wonder_data["image"]
                     ),
                     media_id=media_id,
+                    url=f"{settings.env_base_link}/endless/wonder/{i}",
                 )
             )
     if wonders_to_insert:

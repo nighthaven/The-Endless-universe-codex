@@ -40,9 +40,12 @@ def create_wonder(
         name=wonder_form_creation.name,
         description=wonder_form_creation.description,
         image=image_path,
+        url="to_define",
         media_id=media.id,
     )
     new_wonder = wonder_repository.save(new_wonder)
+    new_wonder.url = link_service.get_restful_link(f"wonder/{new_wonder.id}")
+    new_wonder = wonder_repository.update(new_wonder)
     return new_wonder
 
 

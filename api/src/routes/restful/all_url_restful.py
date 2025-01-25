@@ -9,4 +9,7 @@ router = APIRouter(
 
 @router.get("/")
 def get_all_url():
-    return {"Anomalies": LinkService().get_restful_link("anomalies")}
+    return {
+        "anomalies": LinkService().get_restful_link("anomalies"),
+        "wonders": LinkService().get_restful_link("wonders"),
+    }

@@ -3,6 +3,7 @@ class TestAllLinkRestful:
         response = client.get("/endless")
         assert response.status_code == 200
         assert (
-            response.json().get("Anomalies")
+            response.json().get("anomalies")
             == "http://127.0.0.1:8000/endless/anomalies"
         )
+        assert response.json().get("wonders") == "http://127.0.0.1:8000/endless/wonders"

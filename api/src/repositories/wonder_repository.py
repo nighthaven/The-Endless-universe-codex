@@ -18,6 +18,21 @@ class WonderRepository:
         self.db.refresh(wonder)
         return wonder
 
+    def update(self, wonder: Wonder) -> Wonder:
+        self.db.merge(wonder)
+        self.db.commit()
+        self.db.refresh(wonder)
+        return wonder
+
+    def get_all(self):
+        return self.db.query(Wonder).order_by(Wonder.id)
+
+    def find_by_id(
+        self,
+        wonder_id: int,
+    ) -> Optional[Wonder]:
+        return self.db.query(Wonder).filter(Wonder.id == wonder_id).one_or_none()
+
     def find_all(
         self,
         media: Optional[MediaName] = None,
