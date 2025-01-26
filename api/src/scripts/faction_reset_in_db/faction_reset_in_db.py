@@ -9,9 +9,11 @@ from typing import Annotated
 
 from fastapi import Depends
 from sqlalchemy.orm import Session
+from src.config import settings
 from src.models import SessionLocal, get_db
 from src.models.faction_description_model import FactionDescription
 from src.models.factions_models import Faction
+from src.models.media_models import Media
 
 json_file_path = Path(__file__).parents[0] / "factions.json"
 
@@ -24,7 +26,12 @@ def delete_factions(db: Session):
     seq_name = db.execute(
         text("SELECT pg_get_serial_sequence('factions', 'id')")
     ).scalar()
-    db.query(FactionDescription).delete()
+    existing_faction_description = db.query(
+        db.query(FactionDescription).exists()
+    ).scalar()
+    if existing_faction_description:
+        db.query(Media).delete()
+        db.query(FactionDescription).delete()
     db.query(Faction).delete()
     db.execute(text(f"ALTER SEQUENCE {seq_name} RESTART WITH 1"))
     db.commit()
@@ -32,10 +39,11 @@ def delete_factions(db: Session):
 
 def import_factions(db: Annotated[Session, Depends(get_db)]):
     faction_to_insert = []
-    for faction_data in factions_data:
+    for i, faction_data in enumerate(factions_data, start=1):
         faction_to_insert.append(
             Faction(
                 name=faction_data["name"],
+                url=f"{settings.env_base_link}/endless/factions/{i}",
             )
         )
     if faction_to_insert:

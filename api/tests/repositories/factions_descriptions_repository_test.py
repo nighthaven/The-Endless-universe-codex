@@ -1,5 +1,5 @@
 from src.enums.media_name import MediaName
-from src.repositories.faction_repository import FactionDescriptionRepository
+from src.repositories.faction_description_repository import FactionDescriptionRepository
 from tests.fixtures.faction_description_factory import FactionDescriptionFactory
 from tests.fixtures.factions_factory import FactionFactory
 from tests.fixtures.media_factory import MediaFactory

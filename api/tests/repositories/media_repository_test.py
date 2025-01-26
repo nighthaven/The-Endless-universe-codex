@@ -10,6 +10,16 @@ class TestCreateMediaRepository:
         assert response.name == media.name
         assert response.description == media.description
 
+
+class TestGetMediaRepository:
+    def test_get_all_media(self, client, db_session):
+        media = MediaFactory()
+        media2 = MediaFactory()
+        media3 = MediaFactory()
+        media_repository = MediaRepository(db_session)
+        response = media_repository.get_all()
+        assert response == [media, media2, media3]
+
     def test_get_all_media_repository(self, client, db_session):
         media_1 = MediaFactory()
         media_2 = MediaFactory()
