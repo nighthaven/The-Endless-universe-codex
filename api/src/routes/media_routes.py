@@ -9,8 +9,8 @@ from src.schemas.response.media_response import MediaResponse
 from src.utils.Oauth2 import get_current_user
 
 router = APIRouter(
-    prefix="/media",
-    tags=["media"],
+    prefix="/medias",
+    tags=["medias"],
 )
 
 

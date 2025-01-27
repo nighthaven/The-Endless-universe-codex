@@ -6,6 +6,39 @@ from tests.fixtures.media_factory import MediaFactory
 
 
 class TestGetFactionDescription:
+    def test_get_all_faction_descriptions(self, client, db_session):
+        faction = FactionDescriptionFactory()
+        faction2 = FactionDescriptionFactory()
+        faction3 = FactionDescriptionFactory()
+
+        faction_repository = FactionDescriptionRepository(db_session)
+        response = faction_repository.get_all()
+        assert response.all() == [faction, faction2, faction3]
+
+    def test_get_faction_by_id(self, client, db_session):
+        faction = FactionDescriptionFactory()
+        faction_repository = FactionDescriptionRepository(db_session)
+        response = faction_repository.find_by_id(faction.id)
+
+        assert response.id == faction.id
+        assert response.description == faction.description
+        assert response.affinity == faction.affinity
+        assert response.faction_id == faction.faction_id
+        assert response.faction == faction.faction
+        assert response.government == faction.government
+        assert response.heroes == faction.heroes
+        assert response.home_planet == faction.home_planet
+        assert response.home_planet_id == faction.home_planet_id
+        assert response.ideology == faction.ideology
+        assert response.major == faction.major
+        assert response.media_id == faction.media_id
+        assert response.media == faction.media
+        assert response.populations == faction.populations
+        assert response.starting_technology == faction.starting_technology
+        assert response.traits == faction.traits
+        assert response.units == faction.units
+        assert response.url == faction.url
+
     def test_get_faction_description(self, client, db_session):
         faction = FactionDescriptionFactory()
         FactionDescriptionFactory()

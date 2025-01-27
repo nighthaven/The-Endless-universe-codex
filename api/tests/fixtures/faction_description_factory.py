@@ -27,3 +27,6 @@ class FactionDescriptionFactory(factory.alchemy.SQLAlchemyModelFactory):
     units = factory.List(["unit1", "unit2", "unit3"])
     heroes = factory.List(["hero1", "hero2", "hero3"])
     major = factory.Faker("boolean")
+    url = factory.Sequence(
+        lambda n: f"http://example.com/endless/faction-descriptions/{n}"
+    )
