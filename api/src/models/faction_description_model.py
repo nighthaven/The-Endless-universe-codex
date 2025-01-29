@@ -25,3 +25,4 @@ class FactionDescription(Base):
     units = Column(ARRAY(String), nullable=True)
     heroes = Column(ARRAY(String), nullable=True)
     major = Column(Boolean, nullable=False, default=True)
+    url = Column(String, nullable=False)

@@ -13,6 +13,19 @@ class FactionDescriptionRepository:
     def __init__(self, db: Annotated[Session, Depends(get_db)]):
         self.db = db
 
+    def get_all(self):
+        return self.db.query(FactionDescription).order_by(FactionDescription.id)
+
+    def find_by_id(
+        self,
+        faction_description_id: int,
+    ) -> Optional[FactionDescription]:
+        return (
+            self.db.query(FactionDescription)
+            .filter(FactionDescription.id == faction_description_id)
+            .one_or_none()
+        )
+
     def find_by(
         self,
         media: Optional[MediaName] = None,

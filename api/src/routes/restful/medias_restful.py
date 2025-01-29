@@ -5,7 +5,7 @@ from src.repositories.media_repository import MediaRepository
 
 router = APIRouter(
     prefix="/endless/medias",
-    tags=["media"],
+    tags=["medias"],
 )
 
 
