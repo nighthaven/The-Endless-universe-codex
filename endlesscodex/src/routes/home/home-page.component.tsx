@@ -7,7 +7,7 @@ function Home() {
   return (
     <BackgroundComponent>
       <Title>
-        <h1>Documentation de l&apos;API</h1>
+        <h1>API Resources</h1>
       </Title>
       <HomeComponent />
     </BackgroundComponent>

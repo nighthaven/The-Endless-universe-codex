@@ -17,7 +17,12 @@ function NavbarComponent() {
         </div>
         <div className="links-container">
           <Link className="nav-links" to="/anomalies">
-            Anomalies/wonders
+            Anomalies
+          </Link>
+        </div>
+        <div className="links-container">
+          <Link className="nav-links" to="/wonders">
+            Wonders
           </Link>
         </div>
         <div className="links-container">
