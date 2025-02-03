@@ -1,25 +1,23 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState, AppDispatch } from '../../store/store';
-import { fetchAnomalies } from '../../store/anomalies/anomalies.reducer';
+import { fetchWonders } from '../../store/wonders/wonders.reducer';
 import ItemLayoutComponent from '../itemlayout/item-layout.component';
 
 import {
   InfoContainer,
   ImageContainerAnomaly,
   ImageBackground,
-} from './anomalies.styles';
+} from './wonders.styles';
 import { Title } from '../factions/factions-list.styles';
 
-function AnomaliesComponent() {
+function WondersComponent() {
   const dispatch = useDispatch<AppDispatch>();
 
-  const { anomalies, error } = useSelector(
-    (state: RootState) => state.anomalies
-  );
+  const { wonders, error } = useSelector((state: RootState) => state.wonders);
 
   useEffect(() => {
-    dispatch(fetchAnomalies());
+    dispatch(fetchWonders());
   }, [dispatch]);
 
   if (error) {
@@ -29,18 +27,18 @@ function AnomaliesComponent() {
   return (
     <>
       <Title>
-        <h1>Anomalies</h1>
+        <h1>Wonders</h1>
       </Title>
-      <div data-testid="anomalie-content">
-        {anomalies.map((anomaly) => (
-          <ItemLayoutComponent key={anomaly.id}>
+      <div data-testid="wonder-content">
+        {wonders.map((wonder) => (
+          <ItemLayoutComponent key={wonder.id}>
             <InfoContainer>
-              <h2 className="info-container-h2" data-testid="anomalie-name">
-                {anomaly.name}
+              <h2 className="info-container-h2" data-testid="wonder-name">
+                {wonder.name}
               </h2>
-              <p className="info-p">{anomaly.description}</p>
+              <p className="info-p">{wonder.description}</p>
               <ImageContainerAnomaly>
-                <ImageBackground imageUrl={anomaly.image} />
+                <ImageBackground imageUrl={wonder.image} />
               </ImageContainerAnomaly>
             </InfoContainer>
           </ItemLayoutComponent>
@@ -50,4 +48,4 @@ function AnomaliesComponent() {
   );
 }
 
-export default AnomaliesComponent;
+export default WondersComponent;

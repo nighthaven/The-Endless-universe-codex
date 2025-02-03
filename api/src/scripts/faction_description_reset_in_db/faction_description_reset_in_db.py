@@ -64,7 +64,7 @@ def import_all_faction_descriptions(db: Annotated[Session, Depends(get_db)]):
                 units=description["units"],
                 heroes=description["heroes"],
                 major=description["major"],
-                url=f"{settings.env_base_link}/endless/faction-description/{i}",
+                url=f"{settings.env_base_link}/endless/faction-descriptions/{i}",
             )
         )
     if faction_informations_to_insert:

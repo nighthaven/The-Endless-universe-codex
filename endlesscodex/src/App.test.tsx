@@ -17,6 +17,6 @@ test('renders learn react link', () => {
       <App />
     </Provider>
   );
-  const linkElement = screen.getByText(/Documentation de l'API/i);
+  const linkElement = screen.getByText(/API Resources/i);
   expect(linkElement).toBeInTheDocument();
 });

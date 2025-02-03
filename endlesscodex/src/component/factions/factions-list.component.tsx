@@ -77,7 +77,7 @@ function FactionListComponent() {
   return (
     <>
       <Title>
-        <h1>Liste des Factions</h1>
+        <h1>Factions</h1>
       </Title>
 
       <div style={{ margin: '20px 0' }}>

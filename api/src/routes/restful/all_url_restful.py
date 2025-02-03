@@ -16,5 +16,5 @@ def get_all_url():
         "wonders": link_service.get_restful_link("wonders"),
         "planets": link_service.get_restful_link("planets"),
         "factions": link_service.get_restful_link("factions"),
-        "faction_descriptions": link_service.get_restful_link("faction_descriptions"),
+        "faction_descriptions": link_service.get_restful_link("faction-descriptions"),
     }

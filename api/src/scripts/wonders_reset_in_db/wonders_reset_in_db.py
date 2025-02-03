@@ -53,7 +53,7 @@ def import_all_wonders(db: Annotated[Session, Depends(get_db)]):
                         media_name_object, wonder_data["image"]
                     ),
                     media_id=media_id,
-                    url=f"{settings.env_base_link}/endless/wonder/{i}",
+                    url=f"{settings.env_base_link}/endless/wonders/{i}",
                 )
             )
     if wonders_to_insert:

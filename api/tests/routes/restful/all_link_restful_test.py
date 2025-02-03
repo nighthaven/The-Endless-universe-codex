@@ -10,7 +10,7 @@ class TestAllLinkRestful:
         )
         assert (
             response.json().get("faction_descriptions")
-            == "http://127.0.0.1:8000/endless/faction_descriptions"
+            == "http://127.0.0.1:8000/endless/faction-descriptions"
         )
         assert response.json().get("planets") == "http://127.0.0.1:8000/endless/planets"
         assert (
