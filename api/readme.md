@@ -1,4 +1,4 @@
-# Readme de l'application
+# Application informations
 
 The endless universe codex
 
@@ -19,6 +19,23 @@ pip install -r requirement
 ```
 
 Make sure the `requirements.txt` file is in the root directory of the project.
+
+### using the backend
+
+in the terminal go to the folder named api and type : 
+```
+uvicorn src.main:app --reload
+```
+
+you can use the swagger of the application clicking on the URL and typing /docs
+
+### using the frontend
+
+open another tab in your IDE and open the folder endlesscodex
+then type :
+```
+yarn start
+```
 
 ### Commit organization and contributions
 
