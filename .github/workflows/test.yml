@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:17  # Utilise une version appropriée
+        image: postgres:17
         env:
           POSTGRES_USER: ${{ secrets.DATABASE_USERNAME }}
           POSTGRES_PASSWORD: ${{ secrets.DATABASE_PASSWORD }}
@@ -49,6 +49,7 @@ jobs:
           echo "ALGORYTHM=${{ secrets.ALGORYTHM }}" >> $GITHUB_ENV
           echo "ACCESS_TOKEN_EXPIRE_MINUTES=${{ secrets.ACCESS_TOKEN_EXPIRE_MINUTES }}" >> $GITHUB_ENV
           echo "ENV_BASE_LINK=${{ secrets.ENV_BASE_LINK }}" >> $GITHUB_ENV
+          echo "OPEN_API_KEY=${{ secrets.OPEN_API_KEY }}" >> $GITHUB_ENV
 
       - name: Installer les dépendances
         working-directory: api

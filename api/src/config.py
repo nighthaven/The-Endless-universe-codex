@@ -26,6 +26,7 @@ class Settings(BaseSettings):
     algorythm: str
     access_token_expire_minutes: int
     env_base_link: str
+    open_api_key: str
 
     model_config = SettingsConfigDict(env_file=env_path, env_file_encoding="utf-8")
 
