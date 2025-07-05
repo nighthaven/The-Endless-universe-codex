@@ -7,6 +7,7 @@ from src.routes.factions_routes import router as factions_router
 from src.routes.media_routes import router as media_router
 from src.routes.restful.all_url_restful import router as all_url_router
 from src.routes.restful.anomalies_restful import router as anomalies_restful_router
+from src.routes.restful.chatbot_restful import router as chatbot_restful_router
 from src.routes.restful.faction_description_restful import (
     router as faction_description_restful_router,
 )
@@ -64,6 +65,7 @@ routers = [
     planets_restful_router,
     factions_restful_router,
     faction_description_restful_router,
+    chatbot_restful_router,
 ]
 for router in routers:
     app.include_router(router)
