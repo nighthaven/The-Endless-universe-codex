@@ -1,56 +1,70 @@
-from typing import Any, Dict
-
-from fastapi import APIRouter
-from openai import OpenAI
-from src.config import settings
+from fastapi import APIRouter, HTTPException
 from src.schemas.base.chatbot_base import ChatRequest
+from src.schemas.base.session_info_chat import SessionInfoChat
+from src.schemas.response.chat_response import ChatResponse
+from src.services.chatbot_service import ChatbotService
 
 router = APIRouter(
     prefix="/endless/chatbot",
     tags=["chatbot"],
 )
 
-client = OpenAI(api_key=f"{settings.open_api_key}")
-
-chat_sessions: Dict[str, Dict[str, Any]] = {}
+chatbot_service = ChatbotService()
 
 
-@router.post("/chat")
+@router.post("/chat", response_model=ChatResponse)
 def chat_endpoint(request: ChatRequest):
-    session = chat_sessions.get(
-        request.session_id, {"selected_game": None, "history": []}
-    )
+    try:
+        result = chatbot_service.process_chat_message(
+            session_id=request.session_id,
+            message=request.message,
+            selected_game=request.selected_game,
+        )
 
-    if session["selected_game"] is None:
-        if request.selected_game is None:
-            return {
-                "response": "Bienvenue dans le Codex Endless ! Quel jeu choisis-tu ? (Endless Legend, Endless Space, Endless Space 2, etc.)"
-            }
-        else:
-            session["selected_game"] = request.selected_game
-            chat_sessions[request.session_id] = session
-            return {
-                "response": f"Tu as choisi {request.selected_game}. Pose-moi une question sur cet univers."
-            }
+        return ChatResponse(
+            response=result["response"],
+            state=result["state"],
+            selected_game=result["selected_game"],
+        )
 
-    if request.message:
-        if request.message.strip().lower() == "/end":
-            chat_sessions.pop(request.session_id, None)
-            return {"response": "Session terminée. À bientôt dans le Codex Endless !"}
-        session["history"].append({"user": request.message})
+    except Exception as e:
+        print(f"Erreur dans chat_endpoint: {str(e)}")
+        raise HTTPException(status_code=500, detail="Erreur interne du serveur")
 
-        prompt = f"Dans le jeu {session['selected_game']}, réponds à la question suivante : {request.message}"
 
-        try:
-            response = client.chat.completions.create(
-                model="gpt-3.5-turbo", messages=[{"role": "user", "content": prompt}]
-            )
-            answer = response.choices[0].message.content
-        except Exception as e:
-            answer = f"Erreur de l'IA : {str(e)}"
+@router.post("/reset")
+def reset_session_endpoint(request: ChatRequest):
+    try:
+        result = chatbot_service.reset_session(request.session_id)
+        return result
 
-        session["history"].append({"bot": answer})
-        chat_sessions[request.session_id] = session
-        return {"response": answer}
+    except Exception as e:
+        print(f"Erreur dans reset_session: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail="Erreur lors de la réinitialisation"
+        )
 
-    return {"response": "Pose-moi une question sur le jeu sélectionné."}
+
+@router.get("/session/{session_id}", response_model=SessionInfoChat)
+def get_session_info_endpoint(session_id: str):
+    try:
+        result = chatbot_service.get_session_info(session_id)
+        return SessionInfoChat(**result)
+
+    except Exception as e:
+        print(f"Erreur dans get_session_info: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail="Erreur lors de la récupération de la session"
+        )
+
+
+@router.get("/health")
+def health_check_endpoint():
+    try:
+        return chatbot_service.get_health_status()
+
+    except Exception as e:
+        print(f"Erreur dans health_check: {str(e)}")
+        raise HTTPException(
+            status_code=500, detail="Erreur lors de la vérification de santé"
+        )
