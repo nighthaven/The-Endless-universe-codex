@@ -49,6 +49,15 @@ The naming convention for git commits follows this pattern:
 
 Example: `(EC-00001)[API] feat: new API endpoint for user authentication`.
 
+### using the chatbot openAI
+
+The chatbot openAI has been created for educational purpose and i don't plan to integrate it in a frontend. 
+An openAI api key is required in order to use it.  
+once the api key is entered, the test is different than pytest.  
+It's possible to test it using python on the file chatbot_restful_testPlay.  
+The terminal should then ask you to select the game, and then you should be able to enter your question and
+the AI will reply.  
+
 
 
 
